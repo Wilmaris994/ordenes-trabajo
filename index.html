@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>App Speech</title>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css" rel="stylesheet">
+
+    <link href="css/admin4b.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+    
+    <script src="js/jquery-3.1.1.js"></script>
+    <script src="js/artyom.min.js"></script>
+    <script src="js/artyomCommands.js"></script>
+  
+</head>
+<body>
+
+<div class="app">
+  <div class="app-body">
+    <div class="app-sidebar">
+      <button type="button" class="btn btn-sidebar" data-dismiss="sidebar">
+        <span class="x"></span>
+      </button>
+      <div class="sidebar-header">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS32fZtSx6C6gMJGp95NN5O09FtFIphVAeAVg11q8yD33TWA9Fu" class="user-photo">
+        <p class="username">
+          Stephanie Soteldo<br>
+          <small>ssoteldo@marnagarage.com</small>
+        </p>
+      </div>
+      <ul id="sidebar-nav" class="sidebar-nav" data-children=".sidebar-nav-group">
+        <li class="sidebar-nav-btn">
+        </li>
+        <li>
+
+        </li>
+        <li class="sidebar-nav-group">
+          <a href="#second-group" class="sidebar-nav-link collapsed" data-toggle="collapse">
+            Item 1
+          </a>
+          <ul id="first-group" class="collapse" data-parent="#sidebar-nav">
+            <li>
+              <a href="page.html" class="sidebar-nav-link">
+                Informacion profesional
+              </a>
+            </li>
+            <li>
+              <a href="page.html" class="sidebar-nav-link">
+                Acerca de
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="sidebar-nav-group">
+          <a href="#second-group" class="sidebar-nav-link collapsed" data-toggle="collapse">
+            Item 2
+          </a>
+          <ul id="second-group" class="collapse" data-parent="#sidebar-nav">
+            <li>
+              <a href="page.html" class="sidebar-nav-link">
+                Second group page 1
+              </a>
+            </li>
+            <li>
+              <a href="page.html" class="sidebar-nav-link">
+                Second group page 2
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <div class="sidebar-footer">
+        <a href="#" data-toggle="tooltip" title="GitHub">
+
+        </a>
+        <a href="#" data-toggle="tooltip" title="Settings">
+          <i class="icon-settings"></i>
+        </a>
+        <a href="#" data-toggle="tooltip" title="Logout">
+          <i class="icon-logout"></i>
+        </a>
+      </div>
+    </div>
+    <div class="app-content">
+        <nav class="navbar navbar-expand navbar-light bg-white">
+        <button type="button" class="btn btn-sidebar" data-toggle="sidebar">
+          <i class="icon-menu"></i>
+        </button>
+        <div class="navbar-brand">App Speech</div>
+        </nav>
+       
+
+        <div class="container-fluid">
+          <div class="nav-tabs-responsive">
+              <ul class="nav nav-tabs-progress nav-tabs-4 mb-4">
+              <li class="nav-item">
+               <a href="#account" class="nav-link active" data-toggle="tab">
+                  <span class="font-lg">1.</span> Información de la cuenta
+                  <small class="d-block text-secondary"> Ingresar a la cuenta
+                  </small>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#personal" class="nav-link" data-toggle="tab">
+                  <span class="font-lg">2.</span> Antes
+                  <small class="d-block text-secondary">Datos del comienzo de la jornada
+                  </small>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#payment" class="nav-link" data-toggle="tab">
+                  <span class="font-lg">3.</span> Después
+                  <small class="d-block text-secondary"> Datos del final de la jornada
+                  </small>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#confirmation" class="nav-link" data-toggle="tab">
+                  <span class="font-lg">4.</span> Repuestos
+                  <small class="d-block text-secondary"> Datos de los repuestos y otros
+                  </small>
+                </a>
+              </li>
+              </ul>
+              <form id="employeeForm" class="tab-content" #employeeForm="ngForm" (ngSubmit)="addEmployee(employeeForm)">
+                <div id="account" class="tab-pane show active">
+                        <div class="mb-3">
+                          <a href="#account-collapse" data-toggle="collapse">
+                            <span class="font-lg">1.</span> Informacion sobre la cuenta
+                          </a>
+                        </div>
+                        <div id="account-collapse" class="collapse show" data-parent="#employeeForm">
+                          <div class="text-secondary mb-3">
+                            <small>Paso 1 de 4</small>
+                          </div>
+                          <div class="row">
+                            <div class="col-12 col-md-6 col-lg-6">
+                              <div class="form-group">
+                                <label>Usuario</label>
+                                <input type="text" class="form-control" name="name"placeholder="Ingrese su nombre usuario">
+
+                              </div>
+                            </div>
+
+                          </div>
+                          <div class="row">
+                            <div class="col-12 col-md-6 col-lg-6">
+                              <div class="form-group">
+                                <label>Contraseña</label>
+                                <input type="text" class="form-control" name="password"" placeholder="Ingrese su contraseña">
+                              </div>
+                            </div>
+                          </div>
+
+
+                            <div class="card-action">
+                                <div class="input-field col-s12">
+                                  <button class="btn right" style="margin-left: 2px;" (click)="resetForm(employeeForm)">Limpiar</button>
+                                  <button class="btn right btn-success ml-auto" data-form-step="#personal">Ingresar</button>
+                                </div>
+                              </div>
+                        </div>
+                </div>
+                <div id="personal" class="tab-pane">
+                    <div class="mb-3">
+                      <a href="#personal-collapse" data-toggle="collapse">
+                                <span class="font-lg">2.</span> Informacion Personal
+                      </a>
+                    </div>
+                    <div id="personal-collapse" class="collapse" data-parent="#employeeForm">
+                      <div class="text-secondary mb-3">
+                                <small>Paso 2 de 4</small>
+                      </div>
+                      <div class="row">
+                          <div class="col-12 col-lg-6">
+                              <div class="row">
+                                  <div class="col-12 col-md-3 col-lg-3">
+                                    <div class="form-group">
+                                        <label>Semana</label>
+                                        <input type="text" class="form-control" value="37">
+                                      </div>
+                                    </div>
+                                    <div class="col-12 col-md-3 col-lg-3">
+                                      <div class="form-group">
+                                        <label>Fecha</label>
+                                        <input type="text" class="form-control" value="14/09/18">
+                                      </div>
+                                    </div>
+                                    <div class="col-12 col-md-3 col-lg-3">
+                                    <div class="form-group">
+                                        <label>N° de OT</label>
+                                        <input type="text" class="form-control" value="567">
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col-12 col-md-3 col-lg-3">
+                                  <div class="form-group">
+                                        <label>Tag Equipo</label>
+                                        <select class="form-control">
+
+                                          <option>- Seleccionar -</option>
+                                          <option>LLAV-HAR-F034</option>
+                                        </select>
+                                      </div>
+                                      </div>
+                                  <div class="col-12 col-md-3 col-lg-3">
+                                  <div class="form-group">
+                                        <label>Equipo</label>
+                                        <select class="form-control">
+
+                                          <option>- Seleccionar -</option>
+                                          <option>Harnero Derrick</option>
+                                        </select>
+                                      </div>
+                                      </div>
+                      </div>
+                      <div class="row">
+                                <div class="col-12 col-lg-6">
+                                  <div class="row">
+                                    <div class="col-12 col-md-4 col-lg-6">
+                                  <div class="form-group">
+                                        <label>Area</label>
+                                        <select class="form-control">
+
+                                          <option>- Seleccionar -</option>
+                                          <option>Lavado</option>
+                                        </select>
+                                      </div>
+                                      </div>
+                                  <div class="col-12 col-md-4 col-lg-6">
+                                  <div class="form-group">
+                                        <label>Tipo de sistema</label>
+                                        <select class="form-control">
+
+                                          <option>- Seleccionar -</option>
+                                          <option>Mecánico</option>
+                                          <option>Eléctrico</option>
+                                          <option>Lubricación</option>
+                                          <option>Inspección</option>
+                                        </select>
+                                      </div>
+                                      </div>
+
+                                  </div>
+                                </div>
+                                <div class="col-12 col-md-3 col-lg-3">
+                                  <div class="form-group">
+                                        <label>Grupo</label>
+                                        <select class="form-control">
+
+                                          <option>- Seleccionar -</option>
+                                          <option>Mecánicos</option>
+                                          <option>Electricistas</option>
+                                          <option>Inspectores</option>
+                                        </select>
+                                      </div>
+                                      </div>
+                                  <div class="col-12 col-md-3 col-lg-3">
+                                  <div class="form-group">
+                                        <label>Frecuencia</label>
+                                        <select class="form-control">
+
+                                          <option>- Seleccionar -</option>
+                                          <option>Diario</option>
+                                          <option>Semanal</option>
+                                          <option>Trimestral</option>
+                                          <option>Semestral</option>
+                                          <option>Anual</option>
+                                        </select>
+                                      </div>
+                                      </div>
+                      </div>
+                      <div class="row">
+                              <div class="col-12 col-lg-6">
+                                  <div class="row">
+                                    <div class="col-12 col-md-3 col-lg-3">
+                                      <div class="form-group">
+                                        <label>Hora de Inicio</label>
+                                        <input type="text" class="form-control" value="08:00 am">
+                                      </div>
+                                    </div>
+                                    <div class="col-12 col-md-3 col-lg-3">
+                                      <div class="form-group">
+                                        <label>Hora de fin</label>
+                                        <input type="text" class="form-control" value="12:00 m">
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col-12 col-lg-6">
+                                  <div class="row">
+                                    <div class="col-12 col-md-6 col-lg-15">
+                                      <div class="form-group">
+                                        <label>Documentación Terreno:</label>
+                                        <label class="checkbox-primary">
+                                  <input type="checkbox"/>
+                                <span class="check-mark"></span> Procedimientos Trabajo(DPR)
+                              </label>
+                              <label class="checkbox-primary">
+                                  <input type="checkbox"/>
+                                <span class="check-mark"></span> Instructivos Trabajo
+                              </label>
+                              <label class="checkbox-primary">
+                                  <input type="checkbox"/>
+                                <span class="check-mark"></span> Check list Equipo
+                              </label>
+                              <label class="checkbox-primary">
+                                  <input type="checkbox"/>
+                                <span class="check-mark"></span> AST Firmada
+                              </label>
+                                      </div>
+                                    </div>
+
+                                  </div>
+                                </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-12 col-lg-10">
+                            <div class="row">
+                              <div class="col-12 col-md-3 col-lg-3">
+                                <div class="form-group">
+                                  <button type="button" class="btn btn-primary" data-toggle="file-manager" data-maxsize="1MB" data-type="image/jpeg,image/png">
+                                  <i class="icon-folder-open-o"></i> Agregar la foto
+                                  </button>
+                                </div>
+                                <div class="table-responsive">
+                                   <table class="table">
+                                     <tr id="file-data" class="d-none">
+                                      <td class="align-middle">
+                                       <img id="file-preview" class="rounded d-none" width="64">
+                                        <span id="file-name"></span>
+                                        <i id="is-invalid" class="icon-close text-danger d-none"></i>
+                                        <i id="is-valid" class="icon-check text-success d-none"></i>
+                                      </td>
+                                      <td class="align-middle">
+                                      <span id="file-size"></span>
+                                      </td>
+                                      </tr>
+                                    </table>
+                                </div>
+                              </div>
+                            </div>
+                      </div>
+
+                      </div>
+                      <div class="row">
+                                <div class="col-12 col-md-6 col-lg-6">
+                                  <div class="form-group">
+                                    <label>Descripción de la actividad</label>
+                                    <br>
+    
+                                    <textarea id="salida_uno" rows="1" cols="50" name='Descripcion'></textarea>
+                                    <button type="button"  id="start-record-btn" class="btn btn-success" >Inicio<i class="fas fa-microphone"></i></button>
+                                    <button type="button" id="pause-record-btn" class="btn btn-danger">Fin<i class="fas fa-stop-circle"></i></button>
+                                  </div>
+                                </div>
+
+                                <div class="col-12 col-md-6 col-lg-6">
+                                  <div class="form-group">
+                                    <label>Observaciones</label>
+                                    <br>
+                                    <textarea id="salidaObs" rows="1" cols="50" name='Observación'></textarea>
+                                    <button type="button" id="start-obs"   class="btn btn-success" >Inicio<i class="fas fa-microphone"></i></button>
+                                    <button type="button"  id="pause-obs" class="btn btn-danger">Fin<i class="fas fa-stop-circle"></i></button>
+
+
+                                  </div>
+                                </div>
+                      </div>
+
+                    </div>
+                </div>
+                <div id="payment" class="tab-pane">
+                   <div class="mb-3">
+                      <a href="#payment-collapse" data-toggle="collapse">
+                        <span class="font-lg">3.</span> Payment information
+                      </a>
+                   </div>
+                   <div id="payment-collapse" class="collapse" data-parent="employeeForm">
+                      <div class="text-secondary mb-3">
+                                <small>Paso 3 de 4</small>
+                      </div>
+                      <div class="row">
+                         <div class="col-12 col-lg-6">
+                                  <div class="row">
+                                    <div class="col-12 col-md-3 col-lg-3">
+                                      <div class="form-group">
+                                        <label>Semana</label>
+                                        <input type="text" class="form-control" value="37">
+                                      </div>
+                                    </div>
+                                    <div class="col-12 col-md-3 col-lg-3">
+                                      <div class="form-group">
+                                        <label>Fecha</label>
+                                        <input type="text" class="form-control" value="14/09/18">
+                                      </div>
+                                    </div>
+                                    <div class="col-12 col-md-3 col-lg-3">
+                                    <div class="form-group">
+                                        <label>N° de OT</label>
+                                        <input type="text" class="form-control" value="567">
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col-12 col-md-3 col-lg-3">
+                                  <div class="form-group">
+                                        <label>Tag Equipo</label>
+                                        <select class="form-control">
+
+                                          <option>- Seleccionar -</option>
+                                          <option>LLAV-HAR-F034</option>
+                                        </select>
+                                      </div>
+                                      </div>
+                                  <div class="col-12 col-md-3 col-lg-3">
+                                  <div class="form-group">
+                                        <label>Equipo</label>
+                                        <select class="form-control">
+
+                                          <option>- Seleccionar -</option>
+                                          <option>Harnero Derrick</option>
+                                        </select>
+                                      </div>
+                                      </div>
+                      </div>
+                      <div class="row">
+                                <div class="col-12 col-lg-6">
+                                  <div class="row">
+                                    <div class="col-12 col-md-4 col-lg-6">
+                                  <div class="form-group">
+                                        <label>Area</label>
+                                        <select class="form-control">
+
+                                          <option>- Seleccionar -</option>
+                                          <option>Lavado</option>
+                                        </select>
+                                      </div>
+                                      </div>
+                                  <div class="col-12 col-md-4 col-lg-6">
+                                  <div class="form-group">
+                                        <label>Tipo de sistema</label>
+                                        <select class="form-control">
+
+                                          <option>- Seleccionar -</option>
+                                          <option>Mecánico</option>
+                                          <option>Eléctrico</option>
+                                          <option>Lubricación</option>
+                                          <option>Inspección</option>
+                                        </select>
+                                      </div>
+                                      </div>
+
+                                  </div>
+                                </div>
+                                <div class="col-12 col-md-3 col-lg-3">
+                                  <div class="form-group">
+                                        <label>Grupo</label>
+                                        <select class="form-control">
+
+                                          <option>- Seleccionar -</option>
+                                          <option>Mecánicos</option>
+                                          <option>Electricistas</option>
+                                          <option>Inspectores</option>
+                                        </select>
+                                      </div>
+                                      </div>
+                                  <div class="col-12 col-md-3 col-lg-3">
+                                  <div class="form-group">
+                                        <label>Frecuencia</label>
+                                        <select class="form-control">
+
+                                          <option>- Seleccionar -</option>
+                                          <option>Diario</option>
+                                          <option>Semanal</option>
+                                          <option>Trimestral</option>
+                                          <option>Semestral</option>
+                                          <option>Anual</option>
+                                        </select>
+                                      </div>
+                                      </div>
+                      </div>
+                      <div class="row">
+                                <div class="col-12 col-lg-6">
+                                  <div class="row">
+                                    <div class="col-12 col-md-3 col-lg-3">
+                                      <div class="form-group">
+                                        <label>Hora de Inicio</label>
+                                        <input type="text" class="form-control" value="08:00 am">
+                                      </div>
+                                    </div>
+                                    <div class="col-12 col-md-3 col-lg-3">
+                                      <div class="form-group">
+                                        <label>Hora de fin</label>
+                                        <input type="text" class="form-control" value="12:00 m">
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col-12 col-lg-6">
+                                  <div class="row">
+                                    <div class="col-12 col-md-6 col-lg-15">
+                                      <div class="form-group">
+                                        <label>Documentación Terreno:</label>
+                                        <label class="checkbox-primary">
+                                  <input type="checkbox"/>
+                                <span class="check-mark"></span> Procedimientos Trabajo(DPR)
+                              </label>
+                              <label class="checkbox-primary">
+                                  <input type="checkbox"/>
+                                <span class="check-mark"></span> Instructivos Trabajo
+                              </label>
+                              <label class="checkbox-primary">
+                                  <input type="checkbox"/>
+                                <span class="check-mark"></span> Check list Equipo
+                              </label>
+                              <label class="checkbox-primary">
+                                  <input type="checkbox"/>
+                                <span class="check-mark"></span> AST Firmada
+                              </label>
+                                      </div>
+                                    </div>
+
+                                  </div>
+                                </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-12 col-lg-10">
+                                  <div class="row">
+                                    <div class="col-12 col-md-3 col-lg-3">
+                                  <div class="form-group">
+                        <button type="button" class="btn btn-primary" data-toggle="file-manager" data-maxsize="1MB" data-type="image/jpeg,image/png">
+                          <i class="icon-folder-open-o"></i> Agregar la foto
+                        </button>
+                      </div>
+                      <div class="table-responsive">
+                        <table class="table">
+
+                          <tr id="file-data" class="d-none">
+                            <td class="align-middle">
+                              <img id="file-preview" class="rounded d-none" width="64">
+                              <span id="file-name"></span>
+                              <i id="is-invalid" class="icon-close text-danger d-none"></i>
+                              <i id="is-valid" class="icon-check text-success d-none"></i>
+                            </td>
+                            <td class="align-middle">
+                              <span id="file-size"></span>
+                            </td>
+                          </tr>
+                        </table>
+                      </div></div>
+                      </div>
+                      </div>
+
+                      </div>
+                      <div class="row">
+                        <div class="col-12 col-md-6 col-lg-6">
+                          <div class="form-group">
+                            <label>Descripción de la actividad</label>
+                            <br>
+
+                            <textarea id="salida_dos" rows="1" cols="50" name='Descripcion'></textarea>
+                            <button type="button" id="start-des-dos"  class="btn btn-success" >Inicio<i class="fas fa-microphone"></i></button>
+                            <button type="button" id="pause-des-dos" class="btn btn-danger">Fin<i class="fas fa-stop-circle"></i></button>
+                          </div>
+                        </div>
+
+                        <div class="col-12 col-md-6 col-lg-6">
+                          <div class="form-group">
+                            <label>Observaciones</label>
+                            <br>
+                            <textarea id="salidaObsDos" rows="1" cols="50" name='Observación'></textarea>
+                            <button type="button" id="start-obs-dos"  class="btn btn-success" >Inicio<i class="fas fa-microphone"></i></button>
+                            <button type="button" id="pause-obs-dos" class="btn btn-danger">Fin<i class="fas fa-stop-circle"></i></button>
+
+
+                          </div>
+                        </div>
+                </div>
+
+                   </div>
+                </div>
+                <div id="confirmation" class="tab-pane">
+                  <div class="mb-3">
+                              <a href="#confirmation-collapse" data-toggle="collapse">
+                                <span class="font-lg">4.</span> Confirm your details
+                                <small class="d-block text-secondary">
+                                  Lorem ipsum dolor sit amet, venenatis adipiscing
+                                </small>
+                              </a>
+                  </div>
+                  <div id="confirmation-collapse" class="collapse" data-parent="employeeForm">
+                    <div class="text-secondary mb-3">
+                                <small>Paso 4 de 4</small>
+                    </div>
+                    <div class="row">
+                                <div class="col-12 col-md-6 col-lg-6">
+                                  <div class="form-group">
+                                    <label>Descripción de repuestos y otros</label>
+                                    <br>
+                                    <textarea id="salida_tres" rows="1" cols="50" name='Repuestos'></textarea>
+                                    <button type="button" id="start-des-tres" class="btn btn-success" >Inicio<i class="fas fa-microphone"></i></button>
+                                    <button type="button"  id="pause-des-tres" class="btn btn-danger">Fin<i class="fas fa-stop-circle"></i></button>
+                                  </div>
+                                </div>
+                                <br>
+                           </div>
+                    <hr>
+                    <div class="d-block d-md-flex">
+                                <button type="button" class="btn btn-outline-success d-none d-md-inline mb-3" data-form-step="#payment">
+                                  <i class="icon-arrow-left font-sm"></i>
+                                    Atrás
+                                </button>
+                                <div class="d-block d-md-inline ml-auto mb-3">
+                                  <button type="submit" class="btn btn-success btn-block">
+                                    Finalizar
+                                  </button>
+                                </div>
+                    </div>
+                    <div class="d-block d-md-inline ml-auto mb-3">
+                      <button type="submit" class="btn btn-primary">
+                                    Añadir otro item
+                      </button>
+                    </div>
+
+                  </div>
+                </div>
+              </form>
+          </div>
+        </div>
+    </div>
+
+  
+
+  </div>
+</div>
+
+<script>
+
+      $('[data-form-step]').on('click', function () {
+      var tabId = $(this).attr('data-form-step');
+      $('[href="' + tabId + '"]').tab('show');
+      });
+
+      $('#employeeForm').on('submit', function(e) {
+  $('.nav-tabs-progress').find('.nav-item').last().addClass('complete');
+  e.preventDefault();
+});
+
+      // $(document).ready(function() {
+
+    $('#uno').mouseover(function() {
+      artyom.say("enlace 1")
+    });
+
+    $('#uno').mouseout(function() {
+      artyom.shutUp();
+    });
+
+    $('#dos').mouseover(function() {
+      artyom.say("enlace 2")
+    });
+
+    $('#tres').mouseover(function() {
+      artyom.say("enlace 3")
+    });
+
+    $('#cuatro').mouseover(function() {
+      artyom.say("enlace 4")
+    });
+
+    //El sistema responde
+    artyom.addCommands([
+      {
+        indexes:["buenos días",'cuál es tu banda favorita','Saluda a mis seguidores'],
+        action: function(i){
+          if (i==0) {
+            artyom.say("Hola Raul, buenos dias");
+          }
+          if (i==1) {
+            artyom.say("Raul, me gusta tu banda BLESS");
+          }
+          if (i==2) {
+            artyom.say("Hola gente, espero les este yendo muy bien y que este tutorial les ayude de mucho. Saludos");
+          }
+        }
+      },
+      {
+        indexes:['me voy','chau'],
+        action: function(){
+          alert('ok, chau');          
+        }
+      },
+      {
+        indexes:['abrir google','abrir facebook', 'abrir youtube'],
+        action: function(i){
+          if (i==0) {
+            artyom.say("Abriendo google");
+            window.open("http://www.google.com",'_blank');
+          }
+          if (i==1) {
+            artyom.say("Abriendo facebook");
+            window.open("http://www.facebook.com/intecsolt/",'_blank');
+          }
+          if (i==2) {
+            artyom.say("Abriendo youtube");
+            window.open("https://www.youtube.com/channel/UCF721oswf7EUSsQbuGFoMZQ",'_blank');
+          }
+        }
+      },
+      {
+        indexes:['limpiar'],
+        action: function(){
+          $('#salida_uno').val('');
+        },
+         action: function(){
+          $('#salidaObs').val('');
+        },
+        action: function(){
+          $('#salida_dos').val('');
+        },
+        action: function(){
+          $('#salidaObsDos').val('');
+        },
+        action: function(){
+          $('#salida_tres').val('');
+        }
+      }
+    ]); 
+
+    // Escribir lo que escucha.
+
+  $('#start-record-btn').on('click', function(e) {
+   
+   startArtyom();
+
+   artyom.redirectRecognizedTextOutput(function(text,isFinal){
+      var texto = $('#salida_uno');
+      if (isFinal) {
+        texto.val(text);
+      }else{
+        
+      }
+    });
+});
+
+$('#pause-record-btn').on('click', function(e) {
+  stopArtyom();
+});
+
+    
+ $('#start-obs').on('click', function(e) {
+   
+   startArtyom();
+
+   artyom.redirectRecognizedTextOutput(function(text,isFinal){
+      var texto = $('#salidaObs');
+      if (isFinal) {
+        texto.val(text);
+      }else{
+        
+      }
+    });
+});
+
+$('#pause-obs').on('click', function(e) {
+  stopArtyom();
+});
+    
+$('#start-des-dos').on('click', function(e) {
+   
+   startArtyom();
+
+   artyom.redirectRecognizedTextOutput(function(text,isFinal){
+      var texto = $('#salida_dos');
+      if (isFinal) {
+        texto.val(text);
+      }else{
+        
+      }
+    });
+});
+
+$('#pause-des-dos').on('click', function(e) {
+  stopArtyom();
+});
+
+
+$('#start-obs-dos').on('click', function(e) {
+   
+   startArtyom();
+
+   artyom.redirectRecognizedTextOutput(function(text,isFinal){
+      var texto = $('#salidaObsDos');
+      if (isFinal) {
+        texto.val(text);
+      }else{
+        
+      }
+    });
+});
+
+$('#pause-obs-dos').on('click', function(e) {
+  stopArtyom();
+});
+
+$('#start-des-tres').on('click', function(e) {
+   
+   startArtyom();
+
+   artyom.redirectRecognizedTextOutput(function(text,isFinal){
+      var texto = $('#salida_tres');
+      if (isFinal) {
+        texto.val(text);
+      }else{
+        
+      }
+    });
+});
+
+$('#pause-des-tres').on('click', function(e) {
+  stopArtyom();
+});
+
+
+
+    //inicializamos la libreria Artyom
+    function startArtyom(){
+      artyom.initialize({
+        lang: "es-ES",
+        continuous:true,// Reconoce 1 solo comando y para de escuchar
+              listen:true, // Iniciar !
+              debug:true, // Muestra un informe en la consola
+              speed:1 // Habla normalmente
+      });
+    };
+    
+    // Stop libreria;
+    function stopArtyom(){
+      artyom.fatality();// Detener cualquier instancia previa
+    };
+
+    // leer texto
+    $('#btnLeer').click(function (e) {
+            e.preventDefault();
+            var btn = $('#btnLeer');
+            if (artyom.speechSupported()) {
+                btn.addClass('disabled');
+                btn.attr('disabled', 'disabled');
+
+                var text = $('#leer').val();
+                if (text) {
+                    var lines = $("#leer").val().split("\n").filter(function (e) {
+                        return e
+                    });
+                    var totalLines = lines.length - 1;
+
+                    for (var c = 0; c < lines.length; c++) {
+                        var line = lines[c];
+                        if (totalLines == c) {
+                            artyom.say(line, {
+                                onEnd: function () {
+                                    btn.removeAttr('disabled');
+                                    btn.removeClass('disabled');
+                                }
+                            });
+                        } else {
+                            artyom.say(line);
+                        }
+                    }
+                }
+            } else {
+                alert("Your browser cannot talk !");
+            }
+        });
+       
+    </script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.1/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="js/admin4b.min.js"></script>
+<script src="js/admin4b.docs.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script href="js/multi-step-form.js"></script>
+
+</body>
+</html>
