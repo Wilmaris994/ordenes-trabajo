@@ -14,6 +14,9 @@
 
   <link href="css/admin4b.min.css" rel="stylesheet">
 
+  <!-- Date Picker-->
+  <link href="css/gijgo.min.css" rel="stylesheet">
+
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
     crossorigin="anonymous">
 
@@ -158,10 +161,10 @@
                             <input type="text" class="form-control" value="37">
                           </div>
                         </div>
-                        <div class="col-12 col-md-3 col-lg-3">
+                        <div class="col-12 col-md-3 col-lg-4">
                           <div class="form-group">
                             <label>Fecha</label>
-                            <input type="text" class="form-control" value="14/09/18">
+                            <input id="datepicker" type="text" class="form-control" value="14/09/18">
                           </div>
                         </div>
                         <div class="col-12 col-md-3 col-lg-3">
@@ -271,22 +274,30 @@
                         <div class="col-12 col-md-6 col-lg-15">
                           <div class="form-group">
                             <label>Documentación Terreno:</label>
-                            <label class="checkbox checkbox-primary">
-                              <input type="checkbox" />
-                              <span class="check-mark"></span> Procedimientos Trabajo (DPR)
-                            </label>
-                            <label class="checkbox checkbox-primary">
-                              <input type="checkbox" />
-                              <span class="check-mark"></span> Instructivos Trabajo
-                            </label>
-                            <label class="checkbox checkbox-primary">
-                              <input type="checkbox" />
-                              <span class="check-mark"></span> Check List Equipo
-                            </label>
-                            <label class="checkbox checkbox-primary">
-                              <input type="checkbox" />
-                              <span class="check-mark"></span> AST Firmada
-                            </label>
+                            <div class="row ml-auto">
+                              <label class="checkbox-primary checkbox">
+                                <input type="checkbox" />
+                                <span class="check-mark"></span> Procedimientos Trabajo (DPR)
+                              </label>
+                              </div>
+                              <div class="row ml-auto">
+                                <label class="checkbox-primary checkbox">
+                                  <input type="checkbox" />
+                                  <span class="check-mark"></span> Instructivos Trabajo
+                                </label>
+                              </div>
+                              <div class="row ml-auto">
+                                <label class="checkbox-primary checkbox">
+                                  <input type="checkbox" />
+                                  <span class="check-mark"></span> Check List Equipo
+                                </label>
+                              </div> 
+                              <div class="row ml-auto">
+                                <label class="checkbox-primary checkbox">
+                                  <input type="checkbox" />
+                                  <span class="check-mark"></span> AST Firmada
+                                </label>
+                              </div>
                           </div>
                         </div>
 
@@ -375,10 +386,10 @@
                             <input type="text" class="form-control" value="37">
                           </div>
                         </div>
-                        <div class="col-12 col-md-3 col-lg-3">
+                        <div class="col-12 col-md-3 col-lg-4">
                           <div class="form-group">
                             <label>Fecha</label>
-                            <input type="text" class="form-control" value="14/09/18">
+                            <input id="datepicker2" type="text" class="form-control">
                           </div>
                         </div>
                         <div class="col-12 col-md-3 col-lg-3">
@@ -478,7 +489,7 @@
                         <div class="col-12 col-md-3 col-lg-3">
                           <div class="form-group">
                             <label>Hora de fin</label>
-                            <input type="text" class="form-control" value="12:00 m">
+                            <input type="text" class="form-control" value="12:00 am">
                           </div>
                         </div>
                       </div>
@@ -488,22 +499,30 @@
                         <div class="col-12 col-md-6 col-lg-15">
                           <div class="form-group">
                             <label>Documentación Terreno:</label>
-                            <label class="checkbox-primary">
+                            <div class="row ml-auto">
+                            <label class="checkbox-primary checkbox">
                               <input type="checkbox" />
-                              <span class="check-mark"></span> Procedimientos Trabajo(DPR)
+                              <span class="check-mark"></span> Procedimientos Trabajo (DPR)
                             </label>
-                            <label class="checkbox-primary">
-                              <input type="checkbox" />
-                              <span class="check-mark"></span> Instructivos Trabajo
-                            </label>
-                            <label class="checkbox-primary">
-                              <input type="checkbox" />
-                              <span class="check-mark"></span> Check list Equipo
-                            </label>
-                            <label class="checkbox-primary">
-                              <input type="checkbox" />
-                              <span class="check-mark"></span> AST Firmada
-                            </label>
+                            </div>
+                            <div class="row ml-auto">
+                              <label class="checkbox-primary checkbox">
+                                <input type="checkbox" />
+                                <span class="check-mark"></span> Instructivos Trabajo
+                              </label>
+                            </div>
+                            <div class="row ml-auto">
+                              <label class="checkbox-primary checkbox">
+                                <input type="checkbox" />
+                                <span class="check-mark"></span> Check List Equipo
+                              </label>
+                            </div> 
+                            <div class="row ml-auto">
+                              <label class="checkbox-primary checkbox">
+                                <input type="checkbox" />
+                                <span class="check-mark"></span> AST Firmada
+                              </label>
+                            </div>
                           </div>
                         </div>
 
@@ -547,9 +566,9 @@
                         <label>Descripción de la actividad</label>
                         <br>
 
-                        <textarea id="salida_dos" rows="1" cols="50" name='Descripcion'></textarea>
-                        <button type="button" id="start-des-dos" class="btn btn-success">Inicio<i class="fas fa-microphone"></i></button>
-                        <button type="button" id="pause-des-dos" class="btn btn-danger">Fin<i class="fas fa-stop-circle"></i></button>
+                        <textarea id="salida_dos" rows="4" cols="50" name='Descripcion' class="form-control mb-3"></textarea>
+                        <button type="button" id="start-des-dos" class="btn btn-success"><i class="fas fa-microphone"></i>  Inicio</button>
+                        <button type="button" id="pause-des-dos" class="btn btn-danger"><i class="fas fa-stop-circle"></i>  Fin</button>
                       </div>
                     </div>
 
@@ -557,9 +576,9 @@
                       <div class="form-group">
                         <label>Observaciones</label>
                         <br>
-                        <textarea id="salidaObsDos" rows="1" cols="50" name='Observación'></textarea>
-                        <button type="button" id="start-obs-dos" class="btn btn-success">Inicio<i class="fas fa-microphone"></i></button>
-                        <button type="button" id="pause-obs-dos" class="btn btn-danger">Fin<i class="fas fa-stop-circle"></i></button>
+                        <textarea id="salidaObsDos" rows="4" cols="50" name='Observación' class="form-control mb-3"></textarea>
+                        <button type="button" id="start-obs-dos" class="btn btn-success"><i class="fas fa-microphone"></i>  Inicio</button>
+                        <button type="button" id="pause-obs-dos" class="btn btn-danger"><i class="fas fa-stop-circle"></i>  Fin</button>
                       </div>
                     </div>
                   </div>
@@ -882,6 +901,9 @@
 
   <!-- Plugin Sweet Alerts -->
   <script src="./js/sweetalert.min.js"></script>
+
+  <!-- Plugin Date Picker-->
+  <script src="js/gijgo.min.js"></script>
 
   <!-- JS Personalizados -->
   <script src="js/custom.js"></script>
