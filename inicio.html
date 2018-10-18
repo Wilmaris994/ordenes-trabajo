@@ -176,20 +176,20 @@
                     <div class="col-12 col-md-3 col-lg-3">
                       <div class="form-group">
                         <label>Tag Equipo</label>
-                        <select class="form-control">
+                        <select id="selTagEquipo" class="form-control">
 
                           <option>- Seleccionar -</option>
-                          <option>LLAV-HAR-F034</option>
+                          <option value="0">LLAV-HAR-F034</option>
                         </select>
                       </div>
                     </div>
                     <div class="col-12 col-md-3 col-lg-3">
                       <div class="form-group">
                         <label>Equipo</label>
-                        <select class="form-control">
+                        <select id="selEquipo" class="form-control">
 
                           <option>- Seleccionar -</option>
-                          <option>Harnero Derrick</option>
+                          <option value="0">Harnero Derrick</option>
                         </select>
                       </div>
                     </div>
@@ -200,23 +200,23 @@
                         <div class="col-12 col-md-4 col-lg-6">
                           <div class="form-group">
                             <label>Area</label>
-                            <select class="form-control">
+                            <select id="selArea" class="form-control">
 
                               <option>- Seleccionar -</option>
-                              <option>Lavado</option>
+                              <option value="0">Lavado</option>
                             </select>
                           </div>
                         </div>
                         <div class="col-12 col-md-4 col-lg-6">
                           <div class="form-group">
                             <label>Tipo de sistema</label>
-                            <select class="form-control">
+                            <select id="selTipoSistema" class="form-control">
 
-                              <option>- Seleccionar -</option>
-                              <option>Mecánico</option>
-                              <option>Eléctrico</option>
-                              <option>Lubricación</option>
-                              <option>Inspección</option>
+                              <option value="0">- Seleccionar -</option>
+                              <option value="1">Mecánico</option>
+                              <option value="2">Eléctrico</option>
+                              <option value="3">Lubricación</option>
+                              <option value="4">Inspección</option>
                             </select>
                           </div>
                         </div>
@@ -226,26 +226,26 @@
                     <div class="col-12 col-md-3 col-lg-3">
                       <div class="form-group">
                         <label>Grupo</label>
-                        <select class="form-control">
+                        <select id="selGrupo" class="form-control">
 
                           <option>- Seleccionar -</option>
-                          <option>Mecánicos</option>
-                          <option>Electricistas</option>
-                          <option>Inspectores</option>
+                          <option value="0">Mecánicos</option>
+                          <option value="2">Electricistas</option>
+                          <option value="1">Inspectores</option>
                         </select>
                       </div>
                     </div>
                     <div class="col-12 col-md-3 col-lg-3">
                       <div class="form-group">
                         <label>Frecuencia</label>
-                        <select class="form-control">
+                        <select id="selFrecuencia" class="form-control">
 
                           <option>- Seleccionar -</option>
-                          <option>Diario</option>
-                          <option>Semanal</option>
-                          <option>Trimestral</option>
-                          <option>Semestral</option>
-                          <option>Anual</option>
+                          <option value="0">Diario</option>
+                          <option value="1">Semanal</option>
+                          <option value="2">Trimestral</option>
+                          <option value="3">Semestral</option>
+                          <option value="4">Anual</option>
                         </select>
                       </div>
                     </div>
@@ -620,7 +620,7 @@
                   <div class="d-block d-md-flex">
                     <button type="button" class="btn btn-outline-success d-none d-md-inline mb-3" data-form-step="#payment">
                       <i class="icon-arrow-left font-sm"></i>
-                      Atrás
+                      Volver Atrás
                     </button>
                     <div class="d-block d-md-inline ml-auto mb-3">
                       <button type="submit" class="btn btn-success btn-block" id="btnFinalizar">
@@ -628,12 +628,6 @@
                       </button>
                     </div>
                   </div>
-                  <div class="d-block d-md-inline ml-auto mb-3">
-                    <button type="submit" class="btn btn-primary">
-                      Añadir otro item
-                    </button>
-                  </div>
-
                 </div>
               </div>
             </form>
