@@ -17,6 +17,9 @@
   <!-- Date Picker-->
   <link href="css/gijgo.min.css" rel="stylesheet">
 
+  <!-- DropZone-->
+  <link href="css/dropzone.css" rel="stylesheet">
+
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
     crossorigin="anonymous">
 
@@ -55,7 +58,7 @@
           </li>
         </ul>
         <div class="sidebar-footer">
-            <a href="#" data-toggle="tooltip" title="" data-original-title="Cerrar Sesion" id="logout"><i class="icon-logout"></i></a>
+            <a href="#" data-toggle="tooltip" title="" data-original-title="Cerrar Sesión" id="logout"><i class="icon-logout"></i></a>
         </div>
       </div>
       <div class="app-content">
@@ -63,7 +66,7 @@
           <button type="button" class="btn btn-sidebar" data-toggle="sidebar">
             <i class="icon-menu"></i>
           </button>
-          <div class="navbar-brand"><i class="icon-chart"></i> Compañia</div>
+          <div class="navbar-brand"><i class="icon-chart"></i> Compañía</div>
         </nav>
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb">
@@ -90,7 +93,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#payment" class="nav-link" data-toggle="tab">
+                <a href="#payment" class="nav-link" data-toggle="tab"  onclick="cargarDatos()">
                   <span class="font-lg">3.</span> Después
                   <small class="d-block text-secondary"> Datos del final de la jornada
                   </small>
@@ -156,7 +159,7 @@
                         <div class="col-12 col-md-3 col-lg-3">
                           <div class="form-group">
                             <label>Semana</label>
-                            <input type="text" class="form-control" value="37">
+                            <input id="txtSemana" type="text" class="form-control" value="37">
                           </div>
                         </div>
                         <div class="col-12 col-md-3 col-lg-4">
@@ -168,7 +171,7 @@
                         <div class="col-12 col-md-3 col-lg-3">
                           <div class="form-group">
                             <label>N° de OT</label>
-                            <input type="text" class="form-control" value="567">
+                            <input id="txtNroOT" type="text" class="form-control" value="567">
                           </div>
                         </div>
                       </div>
@@ -199,7 +202,7 @@
                       <div class="row">
                         <div class="col-12 col-md-4 col-lg-6">
                           <div class="form-group">
-                            <label>Area</label>
+                            <label>Área</label>
                             <select id="selArea" class="form-control">
 
                               <option>- Seleccionar -</option>
@@ -256,13 +259,13 @@
                         <div class="col-12 col-md-3 col-lg-3">
                           <div class="form-group">
                             <label>Hora de Inicio</label>
-                            <input type="text" class="form-control" value="08:00 am">
+                            <input id="txtHoraI" type="text" class="form-control" value="08:00 am">
                           </div>
                         </div>
                         <div class="col-12 col-md-3 col-lg-3">
                           <div class="form-group">
                             <label>Hora de fin</label>
-                            <input type="text" class="form-control" value="12:00 am">
+                            <input id="txtHoraF" type="text" class="form-control" value="12:00 am">
                           </div>
                         </div>
                       </div>
@@ -274,25 +277,25 @@
                             <label>Documentación Terreno:</label>
                             <div class="row ml-auto">
                               <label class="checkbox-primary checkbox">
-                                <input type="checkbox" />
+                                <input id="checkDPR" type="checkbox" />
                                 <span class="check-mark"></span> Procedimientos Trabajo (DPR)
                               </label>
                               </div>
                               <div class="row ml-auto">
                                 <label class="checkbox-primary checkbox">
-                                  <input type="checkbox" />
+                                  <input id="checkTrabajo" type="checkbox" />
                                   <span class="check-mark"></span> Instructivos Trabajo
                                 </label>
                               </div>
                               <div class="row ml-auto">
                                 <label class="checkbox-primary checkbox">
-                                  <input type="checkbox" />
+                                  <input id="checkEquipo" type="checkbox" />
                                   <span class="check-mark"></span> Check List Equipo
                                 </label>
                               </div> 
                               <div class="row ml-auto">
                                 <label class="checkbox-primary checkbox">
-                                  <input type="checkbox" />
+                                  <input id="checkAST" type="checkbox" />
                                   <span class="check-mark"></span> AST Firmada
                                 </label>
                               </div>
@@ -305,27 +308,14 @@
                   <div class="row mb-3">
                     <div class="col-12 col-lg-10">
                       <div class="row">
-                        <div class="col-12 col-md-3 col-lg-3">
-                          <div class="form-group">
-                            <button type="button" class="btn btn-primary" data-toggle="file-manager" data-maxsize="1MB"
-                              data-type="image/jpeg,image/png">
-                              <i class="icon-picture"></i> Agregar foto
-                            </button>
-                          </div>
-                          <div class="table-responsive">
-                            <table class="table">
-                              <tr id="file-data" class="d-none">
-                                <td class="align-middle">
-                                  <img id="file-preview" class="rounded d-none" width="64">
-                                  <span id="file-name"></span>
-                                  <i id="is-invalid" class="icon-close text-danger d-none"></i>
-                                  <i id="is-valid" class="icon-check text-success d-none"></i>
-                                </td>
-                                <td class="align-middle">
-                                  <span id="file-size"></span>
-                                </td>
-                              </tr>
-                            </table>
+                        <div class="col-12 col-md-3 col-lg-7">
+                          <div action="/" class="dropzone ml-1" id="my-awesome-dropzone">
+                            <div class="dz-message">
+                              <div class="drag-icon-cph">
+                                <i class="material-icons">touch_app</i>
+                              </div>
+                              <h4>Arrastre las imágenes o haga clic aquí para subirlas</h4>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -360,7 +350,7 @@
                   <button class="btn btn-outline-success" type="button" data-form-step="#account">
                     <i class="icon-arrow-left font-sm"></i>  Regresar al Paso Anterior
                   </button>
-                  <button class="btn btn-success ml-auto" type="button" data-form-step="#payment">
+                  <button class="btn btn-success ml-auto" type="button" data-form-step="#payment" onclick="cargarDatos()">
                     Ir Al Siguiente Paso <i class="icon-arrow-right font-sm"></i>
                   </button>
                 </div>
@@ -381,19 +371,19 @@
                         <div class="col-12 col-md-3 col-lg-3">
                           <div class="form-group">
                             <label>Semana</label>
-                            <input type="text" class="form-control" value="37">
+                            <input id="txtSemana2" type="text" class="form-control" value="37">
                           </div>
                         </div>
                         <div class="col-12 col-md-3 col-lg-4">
                           <div class="form-group">
                             <label>Fecha</label>
-                            <input id="datepicker2" type="text" class="form-control">
+                            <input id="datepicker2" type="text" class="form-control" value="14/09/18">
                           </div>
                         </div>
                         <div class="col-12 col-md-3 col-lg-3">
                           <div class="form-group">
                             <label>N° de OT</label>
-                            <input type="text" class="form-control" value="567">
+                            <input id="txtNroOT2" type="text" class="form-control" value="567">
                           </div>
                         </div>
                       </div>
@@ -401,20 +391,20 @@
                     <div class="col-12 col-md-3 col-lg-3">
                       <div class="form-group">
                         <label>Tag Equipo</label>
-                        <select class="form-control">
+                        <select id="selTagEquipo2" class="form-control">
 
                           <option>- Seleccionar -</option>
-                          <option>LLAV-HAR-F034</option>
+                          <option value="0">LLAV-HAR-F034</option>
                         </select>
                       </div>
                     </div>
                     <div class="col-12 col-md-3 col-lg-3">
                       <div class="form-group">
                         <label>Equipo</label>
-                        <select class="form-control">
+                        <select id="selEquipo2" class="form-control">
 
                           <option>- Seleccionar -</option>
-                          <option>Harnero Derrick</option>
+                          <option value="0">Harnero Derrick</option>
                         </select>
                       </div>
                     </div>
@@ -424,24 +414,24 @@
                       <div class="row">
                         <div class="col-12 col-md-4 col-lg-6">
                           <div class="form-group">
-                            <label>Area</label>
-                            <select class="form-control">
+                            <label>Área</label>
+                            <select id="selArea2" class="form-control">
 
                               <option>- Seleccionar -</option>
-                              <option>Lavado</option>
+                              <option value="0">Lavado</option>
                             </select>
                           </div>
                         </div>
                         <div class="col-12 col-md-4 col-lg-6">
                           <div class="form-group">
                             <label>Tipo de sistema</label>
-                            <select class="form-control">
+                            <select id="selTipoSistema2" class="form-control">
 
-                              <option>- Seleccionar -</option>
-                              <option>Mecánico</option>
-                              <option>Eléctrico</option>
-                              <option>Lubricación</option>
-                              <option>Inspección</option>
+                              <option value="0">- Seleccionar -</option>
+                              <option value="1">Mecánico</option>
+                              <option value="2">Eléctrico</option>
+                              <option value="3">Lubricación</option>
+                              <option value="4">Inspección</option>
                             </select>
                           </div>
                         </div>
@@ -451,26 +441,26 @@
                     <div class="col-12 col-md-3 col-lg-3">
                       <div class="form-group">
                         <label>Grupo</label>
-                        <select class="form-control">
+                        <select id="selGrupo2" class="form-control">
 
                           <option>- Seleccionar -</option>
-                          <option>Mecánicos</option>
-                          <option>Electricistas</option>
-                          <option>Inspectores</option>
+                          <option value="0">Mecánicos</option>
+                          <option value="2">Electricistas</option>
+                          <option value="1">Inspectores</option>
                         </select>
                       </div>
                     </div>
                     <div class="col-12 col-md-3 col-lg-3">
                       <div class="form-group">
                         <label>Frecuencia</label>
-                        <select class="form-control">
+                        <select id="selFrecuencia2" class="form-control">
 
                           <option>- Seleccionar -</option>
-                          <option>Diario</option>
-                          <option>Semanal</option>
-                          <option>Trimestral</option>
-                          <option>Semestral</option>
-                          <option>Anual</option>
+                          <option value="0">Diario</option>
+                          <option value="1">Semanal</option>
+                          <option value="2">Trimestral</option>
+                          <option value="3">Semestral</option>
+                          <option value="4">Anual</option>
                         </select>
                       </div>
                     </div>
@@ -481,13 +471,13 @@
                         <div class="col-12 col-md-3 col-lg-3">
                           <div class="form-group">
                             <label>Hora de Inicio</label>
-                            <input type="text" class="form-control" value="08:00 am">
+                            <input id="txtHoraI2" type="text" class="form-control" value="08:00 am">
                           </div>
                         </div>
                         <div class="col-12 col-md-3 col-lg-3">
                           <div class="form-group">
                             <label>Hora de fin</label>
-                            <input type="text" class="form-control" value="12:00 am">
+                            <input id="txtHoraF2" type="text" class="form-control" value="12:00 am">
                           </div>
                         </div>
                       </div>
@@ -498,29 +488,29 @@
                           <div class="form-group">
                             <label>Documentación Terreno:</label>
                             <div class="row ml-auto">
-                            <label class="checkbox-primary checkbox">
-                              <input type="checkbox" />
-                              <span class="check-mark"></span> Procedimientos Trabajo (DPR)
-                            </label>
-                            </div>
-                            <div class="row ml-auto">
                               <label class="checkbox-primary checkbox">
-                                <input type="checkbox" />
-                                <span class="check-mark"></span> Instructivos Trabajo
+                                <input id="checkDPR2" type="checkbox" />
+                                <span class="check-mark"></span> Procedimientos Trabajo (DPR)
                               </label>
-                            </div>
-                            <div class="row ml-auto">
-                              <label class="checkbox-primary checkbox">
-                                <input type="checkbox" />
-                                <span class="check-mark"></span> Check List Equipo
-                              </label>
-                            </div> 
-                            <div class="row ml-auto">
-                              <label class="checkbox-primary checkbox">
-                                <input type="checkbox" />
-                                <span class="check-mark"></span> AST Firmada
-                              </label>
-                            </div>
+                              </div>
+                              <div class="row ml-auto">
+                                <label class="checkbox-primary checkbox">
+                                  <input id="checkTrabajo2" type="checkbox" />
+                                  <span class="check-mark"></span> Instructivos Trabajo
+                                </label>
+                              </div>
+                              <div class="row ml-auto">
+                                <label class="checkbox-primary checkbox">
+                                  <input id="checkEquipo2" type="checkbox" />
+                                  <span class="check-mark"></span> Check List Equipo
+                                </label>
+                              </div> 
+                              <div class="row ml-auto">
+                                <label class="checkbox-primary checkbox">
+                                  <input id="checkAST2" type="checkbox" />
+                                  <span class="check-mark"></span> AST Firmada
+                                </label>
+                              </div>
                           </div>
                         </div>
 
@@ -530,29 +520,16 @@
                   <div class="row mb-3">
                     <div class="col-12 col-lg-10">
                       <div class="row">
-                        <div class="col-12 col-md-3 col-lg-3">
-                          <div class="form-group">
-                            <button type="button" class="btn btn-primary" data-toggle="file-manager" data-maxsize="1MB"
-                              data-type="image/jpeg,image/png">
-                              <i class="icon-picture"></i> Agregar foto
-                            </button>
-                          </div>
-                          <div class="table-responsive">
-                            <table class="table">
-                              <tr id="file-data" class="d-none">
-                                <td class="align-middle">
-                                  <img id="file-preview" class="rounded d-none" width="64">
-                                  <span id="file-name"></span>
-                                  <i id="is-invalid" class="icon-close text-danger d-none"></i>
-                                  <i id="is-valid" class="icon-check text-success d-none"></i>
-                                </td>
-                                <td class="align-middle">
-                                  <span id="file-size"></span>
-                                </td>
-                              </tr>
-                            </table>
-                          </div>
-                        </div>
+                          <div class="col-12 col-md-3 col-lg-7">
+                              <div action="/" class="dropzone ml-1" id="my-awesome-dropzone-2">
+                                <div class="dz-message">
+                                  <div class="drag-icon-cph">
+                                    <i class="material-icons">touch_app</i>
+                                  </div>
+                                  <h4>Arrastre las imágenes o haga clic aquí para subirlas</h4>
+                                </div>
+                              </div>
+                            </div>
                       </div>
                     </div>
 
@@ -641,39 +618,30 @@
   </div>
 
   <script>
-
     $('[data-form-step]').on('click', function () {
       var tabId = $(this).attr('data-form-step');
       $('[href="' + tabId + '"]').tab('show');
     });
-
     $('#employeeForm').on('submit', function (e) {
       $('.nav-tabs-progress').find('.nav-item').last().addClass('complete');
       e.preventDefault();
     });
-
     // $(document).ready(function() {
-
     $('#uno').mouseover(function () {
       artyom.say("enlace 1")
     });
-
     $('#uno').mouseout(function () {
       artyom.shutUp();
     });
-
     $('#dos').mouseover(function () {
       artyom.say("enlace 2")
     });
-
     $('#tres').mouseover(function () {
       artyom.say("enlace 3")
     });
-
     $('#cuatro').mouseover(function () {
       artyom.say("enlace 4")
     });
-
     //El sistema responde
     artyom.addCommands([
       {
@@ -732,103 +700,72 @@
         }
       }
     ]);
-
     // Escribir lo que escucha.
-
     $('#start-record-btn').on('click', function (e) {
-
       startArtyom();
-
       artyom.redirectRecognizedTextOutput(function (text, isFinal) {
         var texto = $('#salida_uno');
         if (isFinal) {
           texto.val(text);
         } else {
-
         }
       });
     });
-
     $('#pause-record-btn').on('click', function (e) {
       stopArtyom();
     });
-
-
     $('#start-obs').on('click', function (e) {
-
       startArtyom();
-
       artyom.redirectRecognizedTextOutput(function (text, isFinal) {
         var texto = $('#salidaObs');
         if (isFinal) {
           texto.val(text);
         } else {
-
         }
       });
     });
-
     $('#pause-obs').on('click', function (e) {
       stopArtyom();
     });
-
     $('#start-des-dos').on('click', function (e) {
-
       startArtyom();
-
       artyom.redirectRecognizedTextOutput(function (text, isFinal) {
         var texto = $('#salida_dos');
         if (isFinal) {
           texto.val(text);
         } else {
-
         }
       });
     });
-
     $('#pause-des-dos').on('click', function (e) {
       stopArtyom();
     });
-
-
     $('#start-obs-dos').on('click', function (e) {
-
       startArtyom();
-
       artyom.redirectRecognizedTextOutput(function (text, isFinal) {
         var texto = $('#salidaObsDos');
         if (isFinal) {
           texto.val(text);
         } else {
-
         }
       });
     });
-
     $('#pause-obs-dos').on('click', function (e) {
       stopArtyom();
     });
-
     $('#start-des-tres').on('click', function (e) {
-
       startArtyom();
-
       artyom.redirectRecognizedTextOutput(function (text, isFinal) {
         var texto = $('#salida_tres');
         if (isFinal) {
           texto.val(text);
         } else {
-
         }
       });
     });
-
     $('#pause-des-tres').on('click', function (e) {
       stopArtyom();
     });
-
-
-
     //inicializamos la libreria Artyom
     function startArtyom() {
       artyom.initialize({
@@ -839,12 +776,10 @@
         speed: 1 // Habla normalmente
       });
     };
-
     // Stop libreria;
     function stopArtyom() {
       artyom.fatality();// Detener cualquier instancia previa
     };
-
     // leer texto
     $('#btnLeer').click(function (e) {
       e.preventDefault();
@@ -852,14 +787,12 @@
       if (artyom.speechSupported()) {
         btn.addClass('disabled');
         btn.attr('disabled', 'disabled');
-
         var text = $('#leer').val();
         if (text) {
           var lines = $("#leer").val().split("\n").filter(function (e) {
             return e
           });
           var totalLines = lines.length - 1;
-
           for (var c = 0; c < lines.length; c++) {
             var line = lines[c];
             if (totalLines == c) {
@@ -878,7 +811,6 @@
         alert("Your browser cannot talk !");
       }
     });
-
   </script>
 
 
@@ -895,6 +827,9 @@
 
   <!-- Plugin Date Picker-->
   <script src="js/gijgo.min.js"></script>
+
+  <!-- Plugin DropZone-->
+  <script src="js/dropzone.js"></script>
 
   <!-- JS Personalizados -->
   <script src="js/custom.js"></script>

@@ -23,12 +23,12 @@ function Login() {
         $("#pass").removeClass("has-error");
         $('#mensaje').text("");
         if (usuario.toLowerCase() === "admin" && password === "admin") {
-            swal("Bienvenido Admin!", "Has iniciado sesion correctamente!", "success");
+            swal("¡Bienvenido Admin!", "¡Has iniciado sesión correctamente!", "success");
             setTimeout(function () {
                 location.href = "inicio.html";
             }, 2000);
         } else {
-            swal("Datos Incorrectos!", "El usuario o la contraseña no son correctos, intentelo de nuevo!", "error");
+            swal("¡Datos Incorrectos!", "El usuario o la contraseña no son correctos, inténtelo de nuevo", "error");
         }
 
     }
