@@ -111,7 +111,9 @@
               <div id="account" class="tab-pane show active">
                 <div class="mb-3">
                   <a href="#account-collapse" data-toggle="collapse">
-                    <span class="font-lg">1.</span> Informacion general
+                    <span class="font-lg">1.</span> Inicio
+                  <small class="d-block text-secondary"> Información general
+                  </small>
                   </a>
                 </div>
                 <div id="account-collapse" class="collapse show" data-parent="#employeeForm">
@@ -129,16 +131,18 @@
                                 <li type="circle">Fase 3: Después, Acá se colocará la información relacionada con el fin de la jornada de Trabajo.</li>
                                 <p></p>
                                   <li type="circle">Fase 4: Repuestos, En esta sección se alojará la información acerca de los repuestos utilizados.</li>              
+                        </ul>
                     </div>
-                  </ul>
+                  
 
                   </div>
-
-
-                  <div class="card-action">
-                    <div class="input-field col-s12">
-                        <div class="col-3 col-md-3 col-lg-3"></div>
-                      <button id="btnIngresar" class="btn right btn-success ml-auto" data-form-step="#personal" type="button">Siguiente</button>
+                  <div class="d-none d-md-block">
+                    <hr>
+                    <div class="d-flex mb-3">
+                      <button id="btnIngresar" type="button" class="btn btn-success ml-auto" data-form-step="#personal">
+                        Antes&nbsp;
+                        <i class="icon-arrow-right font-sm"></i>
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -146,7 +150,9 @@
               <div id="personal" class="tab-pane">
                 <div class="mb-3">
                   <a href="#personal-collapse" data-toggle="collapse">
-                    <span class="font-lg">2.</span> Informacion Personal
+                    <span class="font-lg">2.</span> Antes
+                  <small class="d-block text-secondary">Datos del comienzo de la jornada
+                  </small>
                   </a>
                 </div>
                 <div id="personal-collapse" class="collapse" data-parent="#employeeForm">
@@ -343,25 +349,30 @@
                       </div>
                     </div>
                   </div>
-
+                  <div class="d-none d-md-block">
+                     <hr>
+                    <div class="d-flex mb-3">
+                      <button class="btn btn-outline-success" type="button" data-form-step="#account">
+                        <i class="icon-arrow-left font-sm"></i> &nbsp; Inicio
+                      </button>
+                      <button class="btn btn-success ml-auto" type="button" data-form-step="#payment" onclick="cargarDatos()">
+                        Después &nbsp; <i class="icon-arrow-right font-sm"></i>
+                      </button>
+                    </div>
                 </div>
-                <hr>
-                <div class="d-flex mb-5">
-                  <button class="btn btn-outline-success" type="button" data-form-step="#account">
-                    <i class="icon-arrow-left font-sm"></i>  Regresar al Paso Anterior
-                  </button>
-                  <button class="btn btn-success ml-auto" type="button" data-form-step="#payment" onclick="cargarDatos()">
-                    Ir Al Siguiente Paso <i class="icon-arrow-right font-sm"></i>
-                  </button>
                 </div>
+                
+                
               </div>
               <div id="payment" class="tab-pane">
                 <div class="mb-3">
                   <a href="#payment-collapse" data-toggle="collapse">
-                    <span class="font-lg">3.</span> Payment information
+                    <span class="font-lg">3.</span> Después
+                  <small class="d-block text-secondary"> Datos del final de la jornada
+                  </small>
                   </a>
                 </div>
-                <div id="payment-collapse" class="collapse" data-parent="employeeForm">
+                <div id="payment-collapse" class="collapse" data-parent="#employeeForm">
                   <div class="text-secondary mb-3">
                     <small>Paso 3 de 4</small>
                   </div>
@@ -556,28 +567,30 @@
                       </div>
                     </div>
                   </div>
+                    <div class="d-none d-md-block">
+                      <hr>
+                      <div class="d-flex mb-5">
+                        <button class="btn btn-outline-success" type="button" data-form-step="#personal">
+                          <i class="icon-arrow-left font-sm"></i>  Antes
+                        </button>
+                        <button class="btn btn-success ml-auto" type="button" data-form-step="#confirmation">
+                          Respuestos <i class="icon-arrow-right font-sm"></i>
+                        </button>
+                      </div>
+                    </div>
 
                 </div>
-                <hr>
-                <div class="d-flex mb-5">
-                  <button class="btn btn-outline-success" type="button" data-form-step="#personal">
-                    <i class="icon-arrow-left font-sm"></i>  Regresar al Paso Anterior
-                  </button>
-                  <button class="btn btn-success ml-auto" type="button" data-form-step="#confirmation">
-                    Ir Al Siguiente Paso <i class="icon-arrow-right font-sm"></i>
-                  </button>
-                </div>
+                
               </div>
               <div id="confirmation" class="tab-pane">
                 <div class="mb-3">
                   <a href="#confirmation-collapse" data-toggle="collapse">
-                    <span class="font-lg">4.</span> Confirm your details
-                    <small class="d-block text-secondary">
-                      Lorem ipsum dolor sit amet, venenatis adipiscing
-                    </small>
+                    <span class="font-lg">4.</span> Repuestos
+                  <small class="d-block text-secondary"> Datos de los repuestos y otros
+                  </small>
                   </a>
                 </div>
-                <div id="confirmation-collapse" class="collapse" data-parent="employeeForm">
+                <div id="confirmation-collapse" class="collapse" data-parent="#employeeForm">
                   <div class="text-secondary mb-3">
                     <small>Paso 4 de 4</small>
                   </div>
@@ -597,7 +610,7 @@
                   <div class="d-block d-md-flex">
                     <button type="button" class="btn btn-outline-success d-none d-md-inline mb-3" data-form-step="#payment">
                       <i class="icon-arrow-left font-sm"></i>
-                      Volver Atrás
+                      Después
                     </button>
                     <div class="d-block d-md-inline ml-auto mb-3">
                       <button type="submit" class="btn btn-success btn-block" id="btnFinalizar">
