@@ -39,3 +39,25 @@ function limpiar() {
     $("#txtUsuario").prop("value","");
     $("#txtPassword").prop("value","");
 }
+
+// Cargar datos de la Seccion 2 en la Seccion 3
+function cargarDatos() {
+
+    $("#selEquipo2").val($("#selEquipo").val());
+    $("#txtHoraF2").val($("#txtHoraF").val());
+    $("#txtSemana2").val($("#txtSemana").val());
+    $("#datepicker2").val($("#datepicker").val());
+    $("#selTagEquipo2").val($("#selTagEquipo").val());
+    $("#selArea2").val($("#selArea").val());
+    $("#selTipoSistema2").val($("#selTipoSistema").val());
+    $("#selGrupo2").val($("#selGrupo").val());
+    $("#selFrecuencia2").val($("#selFrecuencia").val());
+    $("#txtHoraI2").val($("#txtHoraI").val());
+    $("#txtNroOT2").val($("#txtNroOT").val());
+
+    $("#checkDPR2").prop("checked",$("#checkDPR").prop("checked"));
+    $("#checkTrabajo2").prop("checked",$("#checkTrabajo").prop("checked"));
+    $("#checkAST2").prop("checked",$("#checkAST").prop("checked"));
+    $("#checkDPR2").prop("checked",$("#checkDPR").prop("checked"));
+    $("#checkEquipo2").prop("checked",$("#checkEquipo").prop("checked"));
+}

@@ -90,7 +90,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#payment" class="nav-link" data-toggle="tab">
+                <a href="#payment" class="nav-link" data-toggle="tab"  onclick="cargarDatos()">
                   <span class="font-lg">3.</span> Después
                   <small class="d-block text-secondary"> Datos del final de la jornada
                   </small>
@@ -156,7 +156,7 @@
                         <div class="col-12 col-md-3 col-lg-3">
                           <div class="form-group">
                             <label>Semana</label>
-                            <input type="text" class="form-control" value="37">
+                            <input id="txtSemana" type="text" class="form-control" value="37">
                           </div>
                         </div>
                         <div class="col-12 col-md-3 col-lg-4">
@@ -168,7 +168,7 @@
                         <div class="col-12 col-md-3 col-lg-3">
                           <div class="form-group">
                             <label>N° de OT</label>
-                            <input type="text" class="form-control" value="567">
+                            <input id="txtNroOT" type="text" class="form-control" value="567">
                           </div>
                         </div>
                       </div>
@@ -256,13 +256,13 @@
                         <div class="col-12 col-md-3 col-lg-3">
                           <div class="form-group">
                             <label>Hora de Inicio</label>
-                            <input type="text" class="form-control" value="08:00 am">
+                            <input id="txtHoraI" type="text" class="form-control" value="08:00 am">
                           </div>
                         </div>
                         <div class="col-12 col-md-3 col-lg-3">
                           <div class="form-group">
                             <label>Hora de fin</label>
-                            <input type="text" class="form-control" value="12:00 am">
+                            <input id="txtHoraF" type="text" class="form-control" value="12:00 am">
                           </div>
                         </div>
                       </div>
@@ -274,25 +274,25 @@
                             <label>Documentación Terreno:</label>
                             <div class="row ml-auto">
                               <label class="checkbox-primary checkbox">
-                                <input type="checkbox" />
+                                <input id="checkDPR" type="checkbox" />
                                 <span class="check-mark"></span> Procedimientos Trabajo (DPR)
                               </label>
                               </div>
                               <div class="row ml-auto">
                                 <label class="checkbox-primary checkbox">
-                                  <input type="checkbox" />
+                                  <input id="checkTrabajo" type="checkbox" />
                                   <span class="check-mark"></span> Instructivos Trabajo
                                 </label>
                               </div>
                               <div class="row ml-auto">
                                 <label class="checkbox-primary checkbox">
-                                  <input type="checkbox" />
+                                  <input id="checkEquipo" type="checkbox" />
                                   <span class="check-mark"></span> Check List Equipo
                                 </label>
                               </div> 
                               <div class="row ml-auto">
                                 <label class="checkbox-primary checkbox">
-                                  <input type="checkbox" />
+                                  <input id="checkAST" type="checkbox" />
                                   <span class="check-mark"></span> AST Firmada
                                 </label>
                               </div>
@@ -381,19 +381,19 @@
                         <div class="col-12 col-md-3 col-lg-3">
                           <div class="form-group">
                             <label>Semana</label>
-                            <input type="text" class="form-control" value="37">
+                            <input id="txtSemana2" type="text" class="form-control" value="37">
                           </div>
                         </div>
                         <div class="col-12 col-md-3 col-lg-4">
                           <div class="form-group">
                             <label>Fecha</label>
-                            <input id="datepicker2" type="text" class="form-control">
+                            <input id="datepicker2" type="text" class="form-control" value="14/09/18">
                           </div>
                         </div>
                         <div class="col-12 col-md-3 col-lg-3">
                           <div class="form-group">
                             <label>N° de OT</label>
-                            <input type="text" class="form-control" value="567">
+                            <input id="txtNroOT2" type="text" class="form-control" value="567">
                           </div>
                         </div>
                       </div>
@@ -401,20 +401,20 @@
                     <div class="col-12 col-md-3 col-lg-3">
                       <div class="form-group">
                         <label>Tag Equipo</label>
-                        <select class="form-control">
+                        <select id="selTagEquipo2" class="form-control">
 
                           <option>- Seleccionar -</option>
-                          <option>LLAV-HAR-F034</option>
+                          <option value="0">LLAV-HAR-F034</option>
                         </select>
                       </div>
                     </div>
                     <div class="col-12 col-md-3 col-lg-3">
                       <div class="form-group">
                         <label>Equipo</label>
-                        <select class="form-control">
+                        <select id="selEquipo2" class="form-control">
 
                           <option>- Seleccionar -</option>
-                          <option>Harnero Derrick</option>
+                          <option value="0">Harnero Derrick</option>
                         </select>
                       </div>
                     </div>
@@ -425,23 +425,23 @@
                         <div class="col-12 col-md-4 col-lg-6">
                           <div class="form-group">
                             <label>Area</label>
-                            <select class="form-control">
+                            <select id="selArea2" class="form-control">
 
                               <option>- Seleccionar -</option>
-                              <option>Lavado</option>
+                              <option value="0">Lavado</option>
                             </select>
                           </div>
                         </div>
                         <div class="col-12 col-md-4 col-lg-6">
                           <div class="form-group">
                             <label>Tipo de sistema</label>
-                            <select class="form-control">
+                            <select id="selTipoSistema2" class="form-control">
 
-                              <option>- Seleccionar -</option>
-                              <option>Mecánico</option>
-                              <option>Eléctrico</option>
-                              <option>Lubricación</option>
-                              <option>Inspección</option>
+                              <option value="0">- Seleccionar -</option>
+                              <option value="1">Mecánico</option>
+                              <option value="2">Eléctrico</option>
+                              <option value="3">Lubricación</option>
+                              <option value="4">Inspección</option>
                             </select>
                           </div>
                         </div>
@@ -451,26 +451,26 @@
                     <div class="col-12 col-md-3 col-lg-3">
                       <div class="form-group">
                         <label>Grupo</label>
-                        <select class="form-control">
+                        <select id="selGrupo2" class="form-control">
 
                           <option>- Seleccionar -</option>
-                          <option>Mecánicos</option>
-                          <option>Electricistas</option>
-                          <option>Inspectores</option>
+                          <option value="0">Mecánicos</option>
+                          <option value="2">Electricistas</option>
+                          <option value="1">Inspectores</option>
                         </select>
                       </div>
                     </div>
                     <div class="col-12 col-md-3 col-lg-3">
                       <div class="form-group">
                         <label>Frecuencia</label>
-                        <select class="form-control">
+                        <select id="selFrecuencia2" class="form-control">
 
                           <option>- Seleccionar -</option>
-                          <option>Diario</option>
-                          <option>Semanal</option>
-                          <option>Trimestral</option>
-                          <option>Semestral</option>
-                          <option>Anual</option>
+                          <option value="0">Diario</option>
+                          <option value="1">Semanal</option>
+                          <option value="2">Trimestral</option>
+                          <option value="3">Semestral</option>
+                          <option value="4">Anual</option>
                         </select>
                       </div>
                     </div>
@@ -481,13 +481,13 @@
                         <div class="col-12 col-md-3 col-lg-3">
                           <div class="form-group">
                             <label>Hora de Inicio</label>
-                            <input type="text" class="form-control" value="08:00 am">
+                            <input id="txtHoraI2" type="text" class="form-control" value="08:00 am">
                           </div>
                         </div>
                         <div class="col-12 col-md-3 col-lg-3">
                           <div class="form-group">
                             <label>Hora de fin</label>
-                            <input type="text" class="form-control" value="12:00 am">
+                            <input id="txtHoraF2" type="text" class="form-control" value="12:00 am">
                           </div>
                         </div>
                       </div>
@@ -498,29 +498,29 @@
                           <div class="form-group">
                             <label>Documentación Terreno:</label>
                             <div class="row ml-auto">
-                            <label class="checkbox-primary checkbox">
-                              <input type="checkbox" />
-                              <span class="check-mark"></span> Procedimientos Trabajo (DPR)
-                            </label>
-                            </div>
-                            <div class="row ml-auto">
                               <label class="checkbox-primary checkbox">
-                                <input type="checkbox" />
-                                <span class="check-mark"></span> Instructivos Trabajo
+                                <input id="checkDPR2" type="checkbox" />
+                                <span class="check-mark"></span> Procedimientos Trabajo (DPR)
                               </label>
-                            </div>
-                            <div class="row ml-auto">
-                              <label class="checkbox-primary checkbox">
-                                <input type="checkbox" />
-                                <span class="check-mark"></span> Check List Equipo
-                              </label>
-                            </div> 
-                            <div class="row ml-auto">
-                              <label class="checkbox-primary checkbox">
-                                <input type="checkbox" />
-                                <span class="check-mark"></span> AST Firmada
-                              </label>
-                            </div>
+                              </div>
+                              <div class="row ml-auto">
+                                <label class="checkbox-primary checkbox">
+                                  <input id="checkTrabajo2" type="checkbox" />
+                                  <span class="check-mark"></span> Instructivos Trabajo
+                                </label>
+                              </div>
+                              <div class="row ml-auto">
+                                <label class="checkbox-primary checkbox">
+                                  <input id="checkEquipo2" type="checkbox" />
+                                  <span class="check-mark"></span> Check List Equipo
+                                </label>
+                              </div> 
+                              <div class="row ml-auto">
+                                <label class="checkbox-primary checkbox">
+                                  <input id="checkAST2" type="checkbox" />
+                                  <span class="check-mark"></span> AST Firmada
+                                </label>
+                              </div>
                           </div>
                         </div>
 
