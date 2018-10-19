@@ -17,6 +17,9 @@
   <!-- Date Picker-->
   <link href="css/gijgo.min.css" rel="stylesheet">
 
+  <!-- DropZone-->
+  <link href="css/dropzone.css" rel="stylesheet">
+
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
     crossorigin="anonymous">
 
@@ -305,27 +308,14 @@
                   <div class="row mb-3">
                     <div class="col-12 col-lg-10">
                       <div class="row">
-                        <div class="col-12 col-md-3 col-lg-3">
-                          <div class="form-group">
-                            <button type="button" class="btn btn-primary" data-toggle="file-manager" data-maxsize="1MB"
-                              data-type="image/jpeg,image/png">
-                              <i class="icon-picture"></i> Agregar foto
-                            </button>
-                          </div>
-                          <div class="table-responsive">
-                            <table class="table">
-                              <tr id="file-data" class="d-none">
-                                <td class="align-middle">
-                                  <img id="file-preview" class="rounded d-none" width="64">
-                                  <span id="file-name"></span>
-                                  <i id="is-invalid" class="icon-close text-danger d-none"></i>
-                                  <i id="is-valid" class="icon-check text-success d-none"></i>
-                                </td>
-                                <td class="align-middle">
-                                  <span id="file-size"></span>
-                                </td>
-                              </tr>
-                            </table>
+                        <div class="col-12 col-md-3 col-lg-7">
+                          <div action="/" class="dropzone ml-1" id="my-awesome-dropzone">
+                            <div class="dz-message">
+                              <div class="drag-icon-cph">
+                                <i class="material-icons">touch_app</i>
+                              </div>
+                              <h4>Arrastre las imágenes o haga clic aquí para subirlas</h4>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -530,29 +520,16 @@
                   <div class="row mb-3">
                     <div class="col-12 col-lg-10">
                       <div class="row">
-                        <div class="col-12 col-md-3 col-lg-3">
-                          <div class="form-group">
-                            <button type="button" class="btn btn-primary" data-toggle="file-manager" data-maxsize="1MB"
-                              data-type="image/jpeg,image/png">
-                              <i class="icon-picture"></i> Agregar foto
-                            </button>
-                          </div>
-                          <div class="table-responsive">
-                            <table class="table">
-                              <tr id="file-data" class="d-none">
-                                <td class="align-middle">
-                                  <img id="file-preview" class="rounded d-none" width="64">
-                                  <span id="file-name"></span>
-                                  <i id="is-invalid" class="icon-close text-danger d-none"></i>
-                                  <i id="is-valid" class="icon-check text-success d-none"></i>
-                                </td>
-                                <td class="align-middle">
-                                  <span id="file-size"></span>
-                                </td>
-                              </tr>
-                            </table>
-                          </div>
-                        </div>
+                          <div class="col-12 col-md-3 col-lg-7">
+                              <div action="/" class="dropzone ml-1" id="my-awesome-dropzone-2">
+                                <div class="dz-message">
+                                  <div class="drag-icon-cph">
+                                    <i class="material-icons">touch_app</i>
+                                  </div>
+                                  <h4>Arrastre las imágenes o haga clic aquí para subirlas</h4>
+                                </div>
+                              </div>
+                            </div>
                       </div>
                     </div>
 
@@ -895,6 +872,9 @@
 
   <!-- Plugin Date Picker-->
   <script src="js/gijgo.min.js"></script>
+
+  <!-- Plugin DropZone-->
+  <script src="js/dropzone.js"></script>
 
   <!-- JS Personalizados -->
   <script src="js/custom.js"></script>
