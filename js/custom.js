@@ -36,7 +36,26 @@ $(document).ready(function() {
         format: 'dd/mm/yyyy'
     });
 
-    $('#HoraInicioAntes, #HoraFinAntes, #HoraInicioDespues, #HoraFinDespues').timepicker({
+    $('#HoraInicioAntes').timepicker({
+    uiLibrary: 'bootstrap4',
+    locale: 'es-es',
+    format: 'HH:MM',
+    mode: '24hr'
+    });
+    $('#HoraInicioDespues').timepicker({
+    uiLibrary: 'bootstrap4',
+    locale: 'es-es',
+    format: 'HH:MM',
+    mode: '24hr'
+    });
+    $('#HoraFinAntes').timepicker({
+    uiLibrary: 'bootstrap4',
+    locale: 'es-es',
+    format: 'HH:MM',
+    mode: '24hr'
+    });
+    
+    $('#HoraFinDespues').timepicker({
     uiLibrary: 'bootstrap4',
     locale: 'es-es',
     format: 'HH:MM',
