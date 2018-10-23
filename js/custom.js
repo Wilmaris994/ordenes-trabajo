@@ -24,16 +24,24 @@ $(document).ready(function() {
 
     $('#datepicker').datepicker({
         uiLibrary: 'bootstrap4',
+        locale: 'es-es',
         value: fechaActual,
         format: 'dd/mm/yyyy'
     });
 
     $('#datepicker2').datepicker({
         uiLibrary: 'bootstrap4',
+        locale: 'es-es',
         value: fechaActual,
         format: 'dd/mm/yyyy'
     });
 
+    $('#HoraInicioAntes, #HoraFinAntes, #HoraInicioDespues, #HoraFinDespues').timepicker({
+    uiLibrary: 'bootstrap4',
+    locale: 'es-es',
+    format: 'HH:MM',
+    mode: '24hr'
+    });
     // Codigo para simular la subida de imagenes con dropzone
     var dropzone = new Dropzone('#my-awesome-dropzone', {
         parallelUploads: 2,

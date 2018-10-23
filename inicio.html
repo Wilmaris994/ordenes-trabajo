@@ -165,19 +165,19 @@
                         <div class="col-12 col-md-3 col-lg-3">
                           <div class="form-group">
                             <label>Semana</label>
-                            <input id="txtSemana" type="text" class="form-control" value="37">
+                            <input id="txtSemana" type="number" class="form-control" value="37">
                           </div>
                         </div>
                         <div class="col-12 col-md-3 col-lg-4">
                           <div class="form-group">
                             <label>Fecha</label>
-                            <input id="datepicker" type="text" class="form-control" value="14/09/18">
+                            <input id="datepicker" type="text" class="form-control" value="14/09/18" readonly="true">
                           </div>
                         </div>
                         <div class="col-12 col-md-3 col-lg-3">
                           <div class="form-group">
                             <label>N° de OT</label>
-                            <input id="txtNroOT" type="text" class="form-control" value="567">
+                            <input id="txtNroOT" type="number" class="form-control" value="567">
                           </div>
                         </div>
                       </div>
@@ -185,7 +185,7 @@
                     <div class="col-12 col-md-3 col-lg-3">
                       <div class="form-group">
                         <label>Tag Equipo</label>
-                        <select id="selTagEquipo" class="form-control">
+                        <select id="selTagEquipo" class="form-control" required="true">
 
                           <option>- Seleccionar -</option>
                           <option value="0">LLAV-HAR-F034</option>
@@ -265,13 +265,13 @@
                         <div class="col-12 col-md-4 col-lg-4">
                           <div class="form-group">
                             <label>Hora de Inicio</label>
-                            <input id="txtHoraI" type="text" class="form-control" value="08:00 am">
+                            <input id="HoraInicioAntes" type="text" class="form-control" value="08:00 am" readonly="true">
                           </div>
                         </div>
                         <div class="col-12 col-md-4 col-lg-4">
                           <div class="form-group">
                             <label>Hora de Fin</label>
-                            <input id="txtHoraF" type="text" class="form-control" value="12:00 am">
+                            <input id="HoraFinAntes" type="text" class="form-control" value="12:00 am" readonly="true">
                           </div>
                         </div>
                       </div>
@@ -382,19 +382,19 @@
                         <div class="col-12 col-md-3 col-lg-3">
                           <div class="form-group">
                             <label>Semana</label>
-                            <input id="txtSemana2" type="text" class="form-control" value="37">
+                            <input id="txtSemana2" type="number" class="form-control" value="37">
                           </div>
                         </div>
                         <div class="col-12 col-md-3 col-lg-4">
                           <div class="form-group">
                             <label>Fecha</label>
-                            <input id="datepicker2" type="text" class="form-control" value="14/09/18">
+                            <input id="datepicker2" type="text" class="form-control" value="14/09/18" readonly="true">
                           </div>
                         </div>
                         <div class="col-12 col-md-3 col-lg-3">
                           <div class="form-group">
                             <label>N° de OT</label>
-                            <input id="txtNroOT2" type="text" class="form-control" value="567">
+                            <input id="txtNroOT2" type="number" class="form-control" value="567">
                           </div>
                         </div>
                       </div>
@@ -482,13 +482,13 @@
                         <div class="col-12 col-md-4 col-lg-4">
                           <div class="form-group">
                             <label>Hora de Inicio</label>
-                            <input id="txtHoraI2" type="text" class="form-control" value="08:00 am">
+                            <input id="HoraInicioDespues" type="text" class="form-control" value="08:00 am" readonly="true">
                           </div>
                         </div>
                         <div class="col-12 col-md-4 col-lg-4">
                           <div class="form-group">
                             <label>Hora de Fin</label>
-                            <input id="txtHoraF2" type="text" class="form-control" value="12:00 am">
+                            <input id="HoraFinDespues" type="text" class="form-control" value="12:00 am" readonly="true">
                           </div>
                         </div>
                       </div>
@@ -840,6 +840,7 @@
 
   <!-- Plugin Date Picker-->
   <script src="js/gijgo.min.js"></script>
+  <script src="js/messages.es-es.js"></script>
 
   <!-- Plugin DropZone-->
   <script src="js/dropzone.js"></script>
