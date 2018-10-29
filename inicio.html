@@ -40,8 +40,7 @@
           <span class="x"></span>
         </button>
         <div class="sidebar-header">
-          <img src="./img/sap-logo.png"
-            class="user-photo">
+          <img src="./img/sap-logo.png" class="user-photo">
           <p class="username">
             Órdenes de Trabajo<br>
             <small>Herramienta de Análisis</small>
@@ -58,7 +57,7 @@
           </li>
         </ul>
         <div class="sidebar-footer">
-            <a href="#" data-toggle="tooltip" title="" data-original-title="Cerrar Sesión" id="logout"><i class="icon-logout"></i></a>
+          <a href="#" data-toggle="tooltip" title="" data-original-title="Cerrar Sesión" id="logout"><i class="icon-logout"></i></a>
         </div>
       </div>
       <div class="app-content">
@@ -93,7 +92,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#payment" class="nav-link" data-toggle="tab"  onclick="cargarDatos()">
+                <a href="#payment" class="nav-link" data-toggle="tab" onclick="cargarDatos()">
                   <span class="font-lg">3.</span> Después
                   <small class="d-block text-secondary"> Datos Posteriores a la Culminación del Mantenimiento
                   </small>
@@ -112,8 +111,8 @@
                 <div class="mb-3">
                   <a href="#account-collapse" data-toggle="collapse">
                     <span class="font-lg">1.</span> Inicio
-                  <small class="d-block text-secondary"> Información General
-                  </small>
+                    <small class="d-block text-secondary"> Información General
+                    </small>
                   </a>
                 </div>
                 <div id="account-collapse" class="collapse show" data-parent="#employeeForm">
@@ -122,18 +121,22 @@
                   </div>
                   <div class="row">
                     <div class="col-12 col-md-6 col-lg-6">
-                        <p>Este sistema, está conformado por 4 fases:</p>
-                        <ul>
-                            <li type="circle"> Fase 1: Inicio, en esta sección se proporciona información general del sistema.</li>
-                            <p> </p>
-                              <li type="circle"> Fase 2: Antes, esta sección gestiona la información correspondiente al estado del equipo, antes de iniciar el mantenimiento.</li>
-                              <p></p>
-                                <li type="circle">Fase 3: Después, esta sección gestiona la información correspondiente al estado final del equipo, una vez finalizado el mantenimiento.</li>
-                                <p></p>
-                                  <li type="circle">Fase 4: Repuestos, esta sección administra la información de los repuestos utilizados durante la ejecución del mantenimiento.</li>              
-                        </ul>
+                      <p>Este sistema, está conformado por 4 fases:</p>
+                      <ul>
+                        <li type="circle"> Fase 1: Inicio, en esta sección se proporciona información general del
+                          sistema.</li>
+                        <p> </p>
+                        <li type="circle"> Fase 2: Antes, esta sección gestiona la información correspondiente al
+                          estado del equipo, antes de iniciar el mantenimiento.</li>
+                        <p></p>
+                        <li type="circle">Fase 3: Después, esta sección gestiona la información correspondiente al
+                          estado final del equipo, una vez finalizado el mantenimiento.</li>
+                        <p></p>
+                        <li type="circle">Fase 4: Repuestos, esta sección administra la información de los repuestos
+                          utilizados durante la ejecución del mantenimiento.</li>
+                      </ul>
                     </div>
-                  
+
 
                   </div>
                   <div class="d-none d-md-block">
@@ -151,8 +154,8 @@
                 <div class="mb-3">
                   <a href="#personal-collapse" data-toggle="collapse">
                     <span class="font-lg">2.</span> Antes
-                  <small class="d-block text-secondary">Datos Previos al Inicio del Mantenimiento
-                  </small>
+                    <small class="d-block text-secondary">Datos Previos al Inicio del Mantenimiento
+                    </small>
                   </a>
                 </div>
                 <div id="personal-collapse" class="collapse" data-parent="#employeeForm">
@@ -286,25 +289,25 @@
                                 <input id="checkDPR" type="checkbox" />
                                 <span class="check-mark"></span> Procedimientos Trabajo (DPR)
                               </label>
-                              </div>
-                              <div class="row ml-auto">
-                                <label class="checkbox-primary checkbox">
-                                  <input id="checkTrabajo" type="checkbox" />
-                                  <span class="check-mark"></span> Instructivos Trabajo
-                                </label>
-                              </div>
-                              <div class="row ml-auto">
-                                <label class="checkbox-primary checkbox">
-                                  <input id="checkEquipo" type="checkbox" />
-                                  <span class="check-mark"></span> Check List Equipo
-                                </label>
-                              </div> 
-                              <div class="row ml-auto">
-                                <label class="checkbox-primary checkbox">
-                                  <input id="checkAST" type="checkbox" />
-                                  <span class="check-mark"></span> AST Firmada
-                                </label>
-                              </div>
+                            </div>
+                            <div class="row ml-auto">
+                              <label class="checkbox-primary checkbox">
+                                <input id="checkTrabajo" type="checkbox" />
+                                <span class="check-mark"></span> Instructivos Trabajo
+                              </label>
+                            </div>
+                            <div class="row ml-auto">
+                              <label class="checkbox-primary checkbox">
+                                <input id="checkEquipo" type="checkbox" />
+                                <span class="check-mark"></span> Check List Equipo
+                              </label>
+                            </div>
+                            <div class="row ml-auto">
+                              <label class="checkbox-primary checkbox">
+                                <input id="checkAST" type="checkbox" />
+                                <span class="check-mark"></span> AST Firmada
+                              </label>
+                            </div>
                           </div>
                         </div>
 
@@ -312,7 +315,19 @@
                     </div>
                   </div>
                   <div class="row mb-3">
-                    <div class="col-12 col-lg-6">
+                    <div class="col-12 col-md-6 col-lg-6">
+                      <div class="form-group">
+                        <label>Descripción de la Actividad</label>
+                        <br>
+                        <textarea id="salida_uno" rows="4" cols="50" name='Descripcion' class="form-control mb-3"></textarea>
+                        <button type="button" id="start-record-btn" class="btn btn-success"><i class="fas fa-microphone"></i>
+                          Inicio</button>
+                        <button type="button" id="pause-record-btn" class="btn btn-danger"><i class="fas fa-stop-circle"></i>
+                          Fin</button>
+                      </div>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-6">
                       <div class="row">
                         <div class="col-12">
                           <div action="/" class="dropzone ml-1" id="my-awesome-dropzone">
@@ -326,31 +341,26 @@
                         </div>
                       </div>
                     </div>
-
                   </div>
-                  <div class="row mb-3">
-                    <div class="col-12 col-md-6 col-lg-6">
-                      <div class="form-group">
-                        <label>Descripción de la Actividad</label>
-                        <br>
-                        <textarea id="salida_uno" rows="4" cols="50" name='Descripcion' class="form-control mb-3"></textarea>
-                        <button type="button" id="start-record-btn" class="btn btn-success"><i class="fas fa-microphone"></i>  Inicio</button>
-                        <button type="button" id="pause-record-btn" class="btn btn-danger"><i class="fas fa-stop-circle"></i>  Fin</button>
-                      </div>
-                    </div>
 
+                  <div class="row mb-3">
+                    <div class="col-md-3 col-lg-3">
+                    </div>
                     <div class="col-12 col-md-6 col-lg-6">
                       <div class="form-group">
                         <label>Observaciones</label>
                         <br>
                         <textarea id="salidaObs" rows="4" cols="50" name='Observación' class="form-control mb-3"></textarea>
-                        <button type="button" id="start-obs" class="btn btn-success"><i class="fas fa-microphone"></i>  Inicio</button>
-                        <button type="button" id="pause-obs" class="btn btn-danger"><i class="fas fa-stop-circle"></i>  Fin</button>
+                        <button type="button" id="start-obs" class="btn btn-success"><i class="fas fa-microphone"></i>
+                          Inicio</button>
+                        <button type="button" id="pause-obs" class="btn btn-danger"><i class="fas fa-stop-circle"></i>
+                          Fin</button>
                       </div>
                     </div>
                   </div>
+
                   <div class="d-none d-md-block">
-                     <hr>
+                    <hr>
                     <div class="d-flex mb-3">
                       <button class="btn btn-outline-success" type="button" data-form-step="#account">
                         <i class="icon-arrow-left font-sm"></i> &nbsp; Inicio
@@ -359,17 +369,17 @@
                         Después &nbsp; <i class="icon-arrow-right font-sm"></i>
                       </button>
                     </div>
+                  </div>
                 </div>
-                </div>
-                
-                
+
+
               </div>
               <div id="payment" class="tab-pane">
                 <div class="mb-3">
                   <a href="#payment-collapse" data-toggle="collapse" onclick="cargarDatos()">
                     <span class="font-lg">3.</span> Después
-                  <small class="d-block text-secondary"> Datos Posteriores al Mantenimiento
-                  </small>
+                    <small class="d-block text-secondary"> Datos Posteriores al Mantenimiento
+                    </small>
                   </a>
                 </div>
                 <div id="payment-collapse" class="collapse" data-parent="#employeeForm">
@@ -503,25 +513,25 @@
                                 <input id="checkDPR2" type="checkbox" />
                                 <span class="check-mark"></span> Procedimientos Trabajo (DPR)
                               </label>
-                              </div>
-                              <div class="row ml-auto">
-                                <label class="checkbox-primary checkbox">
-                                  <input id="checkTrabajo2" type="checkbox" />
-                                  <span class="check-mark"></span> Instructivos Trabajo
-                                </label>
-                              </div>
-                              <div class="row ml-auto">
-                                <label class="checkbox-primary checkbox">
-                                  <input id="checkEquipo2" type="checkbox" />
-                                  <span class="check-mark"></span> Check List Equipo
-                                </label>
-                              </div> 
-                              <div class="row ml-auto">
-                                <label class="checkbox-primary checkbox">
-                                  <input id="checkAST2" type="checkbox" />
-                                  <span class="check-mark"></span> AST Firmada
-                                </label>
-                              </div>
+                            </div>
+                            <div class="row ml-auto">
+                              <label class="checkbox-primary checkbox">
+                                <input id="checkTrabajo2" type="checkbox" />
+                                <span class="check-mark"></span> Instructivos Trabajo
+                              </label>
+                            </div>
+                            <div class="row ml-auto">
+                              <label class="checkbox-primary checkbox">
+                                <input id="checkEquipo2" type="checkbox" />
+                                <span class="check-mark"></span> Check List Equipo
+                              </label>
+                            </div>
+                            <div class="row ml-auto">
+                              <label class="checkbox-primary checkbox">
+                                <input id="checkAST2" type="checkbox" />
+                                <span class="check-mark"></span> AST Firmada
+                              </label>
+                            </div>
                           </div>
                         </div>
 
@@ -529,65 +539,73 @@
                     </div>
                   </div>
                   <div class="row mb-3">
-                    <div class="col-12 col-lg-6">
-                      <div class="row">
-                          <div class="col-12">
-                              <div action="/" class="dropzone ml-1" id="my-awesome-dropzone-2">
-                                <div class="dz-message">
-                                  <div class="drag-icon-cph">
-                                    <i class="material-icons">touch_app</i>
-                                  </div>
-                                  <h4>Arrastre las imágenes o haga clic aquí para subirlas</h4>
-                                </div>
-                              </div>
-                            </div>
-                      </div>
-                    </div>
 
-                  </div>
-                  <div class="row">
                     <div class="col-12 col-md-6 col-lg-6">
                       <div class="form-group">
                         <label>Descripción de la Actividad</label>
                         <br>
 
                         <textarea id="salida_dos" rows="4" cols="50" name='Descripcion' class="form-control mb-3"></textarea>
-                        <button type="button" id="start-des-dos" class="btn btn-success"><i class="fas fa-microphone"></i>  Inicio</button>
-                        <button type="button" id="pause-des-dos" class="btn btn-danger"><i class="fas fa-stop-circle"></i>  Fin</button>
+                        <button type="button" id="start-des-dos" class="btn btn-success"><i class="fas fa-microphone"></i>
+                          Inicio</button>
+                        <button type="button" id="pause-des-dos" class="btn btn-danger"><i class="fas fa-stop-circle"></i>
+                          Fin</button>
                       </div>
                     </div>
 
+                    <div class="col-12 col-lg-6">
+                      <div class="row">
+                        <div class="col-12">
+                          <div action="/" class="dropzone ml-1" id="my-awesome-dropzone-2">
+                            <div class="dz-message">
+                              <div class="drag-icon-cph">
+                                <i class="material-icons">touch_app</i>
+                              </div>
+                              <h4>Arrastre las imágenes o haga clic aquí para subirlas</h4>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+
+                    <div class="clo-md-3 col-lg-3"></div>
                     <div class="col-12 col-md-6 col-lg-6">
                       <div class="form-group">
                         <label>Observaciones</label>
                         <br>
                         <textarea id="salidaObsDos" rows="4" cols="50" name='Observación' class="form-control mb-3"></textarea>
-                        <button type="button" id="start-obs-dos" class="btn btn-success"><i class="fas fa-microphone"></i>  Inicio</button>
-                        <button type="button" id="pause-obs-dos" class="btn btn-danger"><i class="fas fa-stop-circle"></i>  Fin</button>
+                        <button type="button" id="start-obs-dos" class="btn btn-success"><i class="fas fa-microphone"></i>
+                          Inicio</button>
+                        <button type="button" id="pause-obs-dos" class="btn btn-danger"><i class="fas fa-stop-circle"></i>
+                          Fin</button>
                       </div>
                     </div>
                   </div>
-                    <div class="d-none d-md-block">
-                      <hr>
-                      <div class="d-flex mb-5">
-                        <button class="btn btn-outline-success" type="button" data-form-step="#personal">
-                          <i class="icon-arrow-left font-sm"></i>  Antes
-                        </button>
-                        <button class="btn btn-success ml-auto" type="button" data-form-step="#confirmation">
-                          Repuestos <i class="icon-arrow-right font-sm"></i>
-                        </button>
-                      </div>
+
+                  <div class="d-none d-md-block">
+                    <hr>
+                    <div class="d-flex mb-5">
+                      <button class="btn btn-outline-success" type="button" data-form-step="#personal">
+                        <i class="icon-arrow-left font-sm"></i> Antes
+                      </button>
+                      <button class="btn btn-success ml-auto" type="button" data-form-step="#confirmation">
+                        Repuestos <i class="icon-arrow-right font-sm"></i>
+                      </button>
                     </div>
+                  </div>
 
                 </div>
-                
+
               </div>
               <div id="confirmation" class="tab-pane">
                 <div class="mb-3">
                   <a href="#confirmation-collapse" data-toggle="collapse">
                     <span class="font-lg">4.</span> Repuestos
-                  <small class="d-block text-secondary"> Datos de los Repuestos Utilizados y Otros
-                  </small>
+                    <small class="d-block text-secondary"> Datos de los Repuestos Utilizados y Otros
+                    </small>
                   </a>
                 </div>
                 <div id="confirmation-collapse" class="collapse" data-parent="#employeeForm">
@@ -595,13 +613,16 @@
                     <small>Paso 4 de 4</small>
                   </div>
                   <div class="row">
-                    <div class="col-12 col-lg-6">
+                      <div class="clo-md-3 col-lg-3"></div>
+                    <div class="col-12 col-md-6 col-lg-6">
                       <div class="form-group">
                         <label>Descripción de Repuestos y Otros</label>
                         <br>
                         <textarea id="salida_tres" rows="2" cols="50" name="Repuestos" class="form-control mb-3"></textarea>
-                        <button type="button" id="start-des-tres" class="btn btn-success"><i class="fas fa-microphone"></i> Inicio</button>
-                        <button type="button" id="pause-des-tres" class="btn btn-danger"><i class="fas fa-stop-circle"></i>  Fin</button>
+                        <button type="button" id="start-des-tres" class="btn btn-success"><i class="fas fa-microphone"></i>
+                          Inicio</button>
+                        <button type="button" id="pause-des-tres" class="btn btn-danger"><i class="fas fa-stop-circle"></i>
+                          Fin</button>
                       </div>
                     </div>
                     <br>
