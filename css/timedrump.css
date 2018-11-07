@@ -1,0 +1,192 @@
+body {
+    background-color: #fefefe;
+    font-family: Arial,Verdana,sans-serif;
+}
+div.date_range_to {
+    margin-left: 25px;
+}
+.displaynone{
+    display: none;
+}
+.date_range_from, .date_range_to {
+    width: 265px;
+    float: left;
+    text-align: left;
+}
+
+.date_range_header {
+    height: 25px;
+    font-weight: 400;
+    border-bottom: 1px solid #CCC;
+    margin-bottom: 10px;
+}
+.date_range_header span.title {
+    float: left;
+    text-align: left;
+}
+.date_range_header span.selection {
+    float: right;
+    text-align: right;
+    color: #CE0000;
+}
+
+div.date_range form {
+    position: relative;
+}
+div.date_range div.date_range_container .lines {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;  
+    border-top: solid 1px #CCC;
+    border-bottom: solid 1px #CCC;
+    position: absolute;
+    top: 58px;
+    left: 0px;
+    width: 100%;
+    height: 24px;
+}
+div.date_range div.date_range_container .lines div {
+    margin-left: 220px;
+    line-height: 21px;
+}		
+
+div.drum-wrapper {
+    float: left;
+}
+div.drum figure {
+    text-align: left;
+    height: 50px;
+    line-height: 50px;
+}
+#drum_from_hours1 figure, #drum_to_hours1 figure,
+#drum_from_date1 figure, #drum_to_date1 figure {
+    text-align: center;
+}
+#drum_from_date1, #drum_to_date1 {
+    margin-left: 10px;
+    margin-right: 5px;
+}
+#drum_from_date1, #drum_to_date1,
+#drum_from_hours1, #drum_to_hours1, 
+#drum_from_minutes1, #drum_to_minutes1 {
+    width: 100px;
+}
+#drum_from_hours1, #drum_to_hours1 {
+    margin-left: 10px;
+}
+#drum_from_minutes1, #drum_to_minutes1 {
+    margin-left: 4px;
+}
+
+#drum_from_hours1 .dial div,
+#drum_to_hours1 .dial div {
+    margin: 0 7px;
+}
+#drum_from_minutes1 .dial div,
+#drum_to_minutes1 .dial div  {
+    margin: 0 2px;
+}
+
+#drum_from_hours2 figure, #drum_to_hours2 figure,
+#drum_from_date2 figure, #drum_to_date2 figure {
+    text-align: center;
+}
+#drum_from_date2, #drum_to_date2 {
+    margin-left: 10px;
+    margin-right: 5px;
+}
+#drum_from_date2, #drum_to_date2,
+#drum_from_hours2, #drum_to_hours2, 
+#drum_from_minutes2, #drum_to_minutes2 {
+    width: 100px;
+}
+#drum_from_hours2, #drum_to_hours2 {
+    margin-left: 10px;
+}
+#drum_from_minutes2, #drum_to_minutes2 {
+    margin-left: 4px;
+}
+
+#drum_from_hours2 .dial div,
+#drum_to_hours2 .dial div {
+    margin: 0 7px;
+}
+#drum_from_minutes2 .dial div,
+#drum_to_minutes2 .dial div  {
+    margin: 0 2px;
+}
+
+#drum_from_hours3 figure, #drum_to_hours3 figure,
+#drum_from_date3 figure, #drum_to_date3 figure {
+    text-align: center;
+}
+#drum_from_date3, #drum_to_date3 {
+    margin-left: 10px;
+    margin-right: 5px;
+}
+#drum_from_date3, #drum_to_date3,
+#drum_from_hours3, #drum_to_hours3, 
+#drum_from_minutes3, #drum_to_minutes3 {
+    width: 100px;
+}
+#drum_from_hours3, #drum_to_hours3 {
+    margin-left: 10px;
+}
+#drum_from_minutes3, #drum_to_minutes3 {
+    margin-left: 4px;
+}
+
+#drum_from_hours3 .dial div,
+#drum_to_hours3 .dial div {
+    margin: 0 7px;
+}
+#drum_from_minutes3.dial div,
+#drum_to_minutes3 .dial div  {
+    margin: 0 2px;
+}
+
+#drum_from_hours4 figure, #drum_to_hours4 figure,
+#drum_from_date4 figure, #drum_to_date4 figure {
+    text-align: center;
+}
+#drum_from_date4, #drum_to_date4 {
+    margin-left: 10px;
+    margin-right: 5px;
+}
+#drum_from_date4, #drum_to_date4,
+#drum_from_hours4, #drum_to_hours4, 
+#drum_from_minutes4, #drum_to_minutes4 {
+    width: 100px;
+}
+#drum_from_hours4, #drum_to_hours4 {
+    margin-left: 10px;
+}
+#drum_from_minutes4, #drum_to_minutes4 {
+    margin-left: 4px;
+}
+
+#drum_from_hours4 .dial div,
+#drum_to_hours4 .dial div {
+    margin: 0 7px;
+}
+#drum_from_minutes4 .dial div,
+#drum_to_minutes4 .dial div  {
+    margin: 0 2px;
+}
+
+.head {   
+    background: #eeeeee;
+}
+
+.selection-title1 {
+    font-size: 40px;position: absolute;left: 105px;top: 1px;
+}
+.selection-title2 {
+    font-size: 40px;position: absolute;left: 105px;top: 1px;
+}
+.selection-title3 {
+    font-size: 40px;position: absolute;left: 105px;top: 1px;
+}
+.selection-title4 {
+    font-size: 40px;position: absolute;left: 105px;top: 1px;
+}
