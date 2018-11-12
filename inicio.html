@@ -338,10 +338,12 @@
                         <label>Descripción de la Actividad</label>
                         <br>
                         <textarea id="salida_uno" rows="4" cols="50" name='Descripcion' class="form-control mb-3"></textarea>
-                        <button type="button" id="start-record-btn" class="btn btn-success"><i class="fas fa-microphone"></i>
-                          Inicio</button>
-                        <button type="button" id="pause-record-btn" class="btn btn-danger"><i class="fas fa-stop-circle"></i>
-                          Fin</button>
+                       <div class="col-sm-1 px-0">
+                                                <button type="button" class="btn btn-light btn-round btn-lg btn-fab"
+                                                        id="btnVozATexto" onclick="startArtyom()">
+                                                    <i class="material-icons">mic</i>
+                                                </button>
+                                            </div>
                       </div>
                     </div>
 
@@ -369,10 +371,12 @@
                         <label>Observaciones</label>
                         <br>
                         <textarea id="salidaObs" rows="4" cols="50" name='Observación' class="form-control mb-3"></textarea>
-                        <button type="button" id="start-obs" class="btn btn-success"><i class="fas fa-microphone"></i>
-                          Inicio</button>
-                        <button type="button" id="pause-obs" class="btn btn-danger"><i class="fas fa-stop-circle"></i>
-                          Fin</button>
+                        <div class="col-sm-1 px-0">
+                                                <button type="button" class="btn btn-light btn-round btn-lg btn-fab"
+                                                        id="btnVozATexto1" onclick="startArtyom()">
+                                                    <i class="material-icons">mic</i>
+                                                </button>
+                                            </div>
                       </div>
                     </div>
                   </div>
@@ -576,10 +580,12 @@
                             <br>
 
                             <textarea id="salida_dos" rows="4" cols="50" name='Descripcion' class="form-control mb-3"></textarea>
-                            <button type="button" id="start-des-dos" class="btn btn-success"><i class="fas fa-microphone"></i>
-                              Inicio</button>
-                            <button type="button" id="pause-des-dos" class="btn btn-danger"><i class="fas fa-stop-circle"></i>
-                              Fin</button>
+                            <div class="col-sm-1 px-0">
+                            <button type="button" class="btn btn-light btn-round btn-lg btn-fab"
+                                                        id="btnVozATexto2" onclick="startArtyom()">
+                                                    <i class="material-icons">mic</i>
+                                                </button>
+                                            </div>
                           </div>
                         </div>
 
@@ -607,10 +613,12 @@
                             <label>Observaciones</label>
                             <br>
                             <textarea id="salidaObsDos" rows="4" cols="50" name='Observación' class="form-control mb-3"></textarea>
-                            <button type="button" id="start-obs-dos" class="btn btn-success"><i class="fas fa-microphone"></i>
-                              Inicio</button>
-                            <button type="button" id="pause-obs-dos" class="btn btn-danger"><i class="fas fa-stop-circle"></i>
-                              Fin</button>
+                             <div class="col-sm-1 px-0">
+                            <button type="button" class="btn btn-light btn-round btn-lg btn-fab"
+                                                        id="btnVozATexto3" onclick="startArtyom()">
+                                                    <i class="material-icons">mic</i>
+                                                </button>
+                                            </div>
                           </div>
                         </div>
                       </div>
@@ -649,10 +657,12 @@
                             <label>Descripción de Repuestos y Otros</label>
                             <br>
                             <textarea id="salida_tres" rows="2" cols="50" name="Repuestos" class="form-control mb-3"></textarea>
-                            <button type="button" id="start-des-tres" class="btn btn-success"><i class="fas fa-microphone"></i>
-                              Inicio</button>
-                            <button type="button" id="pause-des-tres" class="btn btn-danger"><i class="fas fa-stop-circle"></i>
-                              Fin</button>
+                            <div class="col-sm-1 px-0">
+                            <button type="button" class="btn btn-light btn-round btn-lg btn-fab"
+                                                        id="btnVozATexto4" onclick="startArtyom()">
+                                                    <i class="material-icons">mic</i>
+                                                </button>
+                                            </div>
                           </div>
                         </div>
                         <br>
@@ -1361,68 +1371,86 @@ function setearhoraInicioAntes(i,hora){
       }
     ]);
     // Escribir lo que escucha.
-    $('#start-record-btn').on('click', function (e) {
+    artyom.redirectRecognizedTextOutput(function (text, isFinal) {
+  var texto = $('#salida_uno');
+  var salto = "\n";
+  if (isFinal) {
+    if(texto.val() == "") {
+      salto = "";
+    }
+    
+    texto.val(texto.val() + salto + text);
+    
+    
+    autosize.update(texto);
+  }
+});
+  
+    $('#btnVozATexto1').on('click', function (e) {
       startArtyom();
       artyom.redirectRecognizedTextOutput(function (text, isFinal) {
-        var texto = $('#salida_uno');
-        if (isFinal) {
-          texto.val(text);
-        } else {
-        }
-      });
-    });
-    $('#pause-record-btn').on('click', function (e) {
-      stopArtyom();
-    });
-    $('#start-obs').on('click', function (e) {
+      var texto = $('#salidaObs');
+      var salto = "\n";
+      if (isFinal) {
+      if(texto.val() == "") {
+      salto = "";
+    }
+    texto.val(texto.val() + salto + text);
+    
+    
+    autosize.update(texto);
+  }
+});
+ });     
+     $('#btnVozATexto2').on('click', function (e) {
       startArtyom();
       artyom.redirectRecognizedTextOutput(function (text, isFinal) {
-        var texto = $('#salidaObs');
-        if (isFinal) {
-          texto.val(text);
-        } else {
-        }
-      });
-    });
-    $('#pause-obs').on('click', function (e) {
-      stopArtyom();
-    });
-    $('#start-des-dos').on('click', function (e) {
+      var texto = $('#salida_dos');
+      var salto = "\n";
+      if (isFinal) {
+      if(texto.val() == "") {
+      salto = "";
+    }
+    texto.val(texto.val() + salto + text);
+    
+    
+    autosize.update(texto);
+  }
+});
+ });     
+    $('#btnVozATexto3').on('click', function (e) {
       startArtyom();
       artyom.redirectRecognizedTextOutput(function (text, isFinal) {
-        var texto = $('#salida_dos');
-        if (isFinal) {
-          texto.val(text);
-        } else {
-        }
-      });
-    });
-    $('#pause-des-dos').on('click', function (e) {
-      stopArtyom();
-    });
-    $('#start-obs-dos').on('click', function (e) {
-      startArtyom();
-      artyom.redirectRecognizedTextOutput(function (text, isFinal) {
-        var texto = $('#salidaObsDos');
-        if (isFinal) {
-          texto.val(text);
-        } else {
-        }
-      });
-    });
-    $('#pause-obs-dos').on('click', function (e) {
-      stopArtyom();
-    });
-    $('#start-des-tres').on('click', function (e) {
+      var texto = $('#salidaObsDos');
+      var salto = "\n";
+      if (isFinal) {
+      if(texto.val() == "") {
+      salto = "";
+    }
+    texto.val(texto.val() + salto + text);
+    
+    
+    autosize.update(texto);
+  }
+});
+ });     
+   
+    $('#btnVozATexto4').on('click', function (e) {
       startArtyom();
       artyom.redirectRecognizedTextOutput(function (text, isFinal) {
         var texto = $('#salida_tres');
+        var salto = "\n";
         if (isFinal) {
-          texto.val(text);
-        } else {
-        }
-      });
-    });
+        if(texto.val() == "") {
+        salto = "";
+    }
+    texto.val(texto.val() + salto + text);
+    
+    
+    autosize.update(texto);
+  }
+});
+});     
     $('#pause-des-tres').on('click', function (e) {
       stopArtyom();
     });
@@ -1495,6 +1523,7 @@ function setearhoraInicioAntes(i,hora){
 
   <!-- JS Personalizados -->
   <script src="js/custom.js"></script>
+  <script src="js/inicio.js"></script>
 
 
 
