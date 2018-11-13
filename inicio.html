@@ -34,7 +34,7 @@
   <script src="js/drum.min.js"></script>
   <script src="js/hammer.min.js"></script>
   <script src="js/hammer.fakemultitouch.js"></script>
-  
+
 </head>
 
 <body>
@@ -332,37 +332,43 @@
                       </div>
                     </div>
                   </div>
-                  <div class="row mb-3">
-                    <div class="col-12 col-md-6 col-lg-6">
-                      <div class="form-group">
-                        <label>Descripción de la Actividad</label>
-                        <br>
-                        <textarea id="salida_uno" rows="4" cols="50" name='Descripcion' class="form-control mb-3"></textarea>
-                       <div class="col-sm-1 px-0">
-                                                <button type="button" class="btn btn-light btn-round btn-lg btn-fab"
-                                                        id="btnVozATexto" onclick="startArtyom()">
-                                                    <i class="material-icons">mic</i>
-                                                </button>
-                                            </div>
+                  <div class="row mb-3" id="itemsA">
+                    <div class="row">
+                      <div class="col-12 col-md-6 col-lg-6">
+                        <div class="form-group">
+                          <label>Descripción de la Actividad</label>
+                          <br>
+                          <textarea id="salida_uno" rows="4" cols="50" name='Descripcion' class="form-control mb-3"></textarea>
+                          <div class="col-sm-1 px-0">
+                            <button type="button" class="btn btn-light btn-round btn-lg btn-fab"
+                            id="btnVozATexto" onclick="startArtyom()">
+                              <i class="material-icons">mic</i>
+                            </button>
+                          </div>
+                        </div>
                       </div>
-                    </div>
 
-                    <div class="col-12 col-md-6 col-lg-6">
-                      <div class="row">
-                        <div class="col-12">
-                          <div action="/" class="dropzone ml-1" id="my-awesome-dropzone">
-                            <div class="dz-message">
-                              <div class="drag-icon-cph">
-                                <i class="material-icons">touch_app</i>
+                      <div class="col-12 col-md-6 col-lg-6">
+                        <div class="row">
+                          <div class="col-12">
+                            <div action="/" class="dropzone ml-1" id="my-awesome-dropzone">
+                              <div class="dz-message">
+                                <div class="drag-icon-cph">
+                                  <i class="material-icons">touch_app</i>
+                                </div>
+                                <h4>Arrastre las imágenes o haga clic aquí para subirlas</h4>
                               </div>
-                              <h4>Arrastre las imágenes o haga clic aquí para subirlas</h4>
                             </div>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
-
+                  <div class="row">
+                    <div class="col-lg-8 col-md-10 ml-auto mr-auto">
+                      <button class="btn btn-primary btn-block" onclick="newitemA('Antes')">Agregar Nuevo Item</button>
+                    </div>
+                  </div>
                   <div class="row mb-3">
                     <div class="col-md-3 col-lg-3">
                     </div>
@@ -372,11 +378,11 @@
                         <br>
                         <textarea id="salidaObs" rows="4" cols="50" name='Observación' class="form-control mb-3"></textarea>
                         <div class="col-sm-1 px-0">
-                                                <button type="button" class="btn btn-light btn-round btn-lg btn-fab"
-                                                        id="btnVozATexto1" onclick="startArtyom()">
-                                                    <i class="material-icons">mic</i>
-                                                </button>
-                                            </div>
+                          <button type="button" class="btn btn-light btn-round btn-lg btn-fab"
+                          id="btnVozATexto1" onclick="startArtyom()">
+                            <i class="material-icons">mic</i>
+                          </button>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -521,166 +527,171 @@
                                 <i class="gj-icon clock"></i>
                               </button>
                             </div>
-                            </div>
-                          </div>
-                            <div class="col-12 col-md-6 col-lg-6">
-                              <div class="form-group">
-                                <label>Hora de Fin</label>
-                                <div class="input-group">
-                                  <input type="text" class="form-control selection4" maxlength="5" disabled=true value="00:00">
-                                  <button type="button" class="btn btn-outline-secondary border-left-0" data-toggle="modal"
-                                    data-target="#horamodal4">
-                                    <i class="gj-icon clock"></i>
-                                  </button>
-                                </div>
-                              </div>
-                            </div>
                           </div>
                         </div>
-                        <div class="col-12 col-lg-6">
-                          <div class="row">
-                            <div class="col-12">
-                              <div class="form-group">
-                                <label>Documentación Terreno:</label>
-                                <div class="row ml-auto">
-                                  <label class="checkbox-primary checkbox">
-                                    <input id="checkDPR2" type="checkbox" />
-                                    <span class="check-mark"></span> Procedimientos Trabajo (DPR)
-                                  </label>
-                                </div>
-                                <div class="row ml-auto">
-                                  <label class="checkbox-primary checkbox">
-                                    <input id="checkTrabajo2" type="checkbox" />
-                                    <span class="check-mark"></span> Instructivos Trabajo
-                                  </label>
-                                </div>
-                                <div class="row ml-auto">
-                                  <label class="checkbox-primary checkbox">
-                                    <input id="checkEquipo2" type="checkbox" />
-                                    <span class="check-mark"></span> Check List Equipo
-                                  </label>
-                                </div>
-                                <div class="row ml-auto">
-                                  <label class="checkbox-primary checkbox">
-                                    <input id="checkAST2" type="checkbox" />
-                                    <span class="check-mark"></span> AST Firmada
-                                  </label>
-                                </div>
-                              </div>
-                            </div>
-
-                          </div>
-                        </div>
-                      </div>
-                      <div class="row mb-3">
-
                         <div class="col-12 col-md-6 col-lg-6">
                           <div class="form-group">
-                            <label>Descripción de la Actividad</label>
-                            <br>
-
-                            <textarea id="salida_dos" rows="4" cols="50" name='Descripcion' class="form-control mb-3"></textarea>
-                            <div class="col-sm-1 px-0">
-                            <button type="button" class="btn btn-light btn-round btn-lg btn-fab"
-                                                        id="btnVozATexto2" onclick="startArtyom()">
-                                                    <i class="material-icons">mic</i>
-                                                </button>
-                                            </div>
-                          </div>
-                        </div>
-
-                        <div class="col-12 col-lg-6">
-                          <div class="row">
-                            <div class="col-12">
-                              <div action="/" class="dropzone ml-1" id="my-awesome-dropzone-2">
-                                <div class="dz-message">
-                                  <div class="drag-icon-cph">
-                                    <i class="material-icons">touch_app</i>
-                                  </div>
-                                  <h4>Arrastre las imágenes o haga clic aquí para subirlas</h4>
-                                </div>
-                              </div>
+                            <label>Hora de Fin</label>
+                            <div class="input-group">
+                              <input type="text" class="form-control selection4" maxlength="5" disabled=true value="00:00">
+                              <button type="button" class="btn btn-outline-secondary border-left-0" data-toggle="modal"
+                                data-target="#horamodal4">
+                                <i class="gj-icon clock"></i>
+                              </button>
                             </div>
                           </div>
                         </div>
                       </div>
-
-                      <div class="row">
-
-                        <div class="clo-md-3 col-lg-3"></div>
-                        <div class="col-12 col-md-6 col-lg-6">
-                          <div class="form-group">
-                            <label>Observaciones</label>
-                            <br>
-                            <textarea id="salidaObsDos" rows="4" cols="50" name='Observación' class="form-control mb-3"></textarea>
-                             <div class="col-sm-1 px-0">
-                            <button type="button" class="btn btn-light btn-round btn-lg btn-fab"
-                                                        id="btnVozATexto3" onclick="startArtyom()">
-                                                    <i class="material-icons">mic</i>
-                                                </button>
-                                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="d-none d-md-block">
-                        <hr>
-                        <div class="d-flex mb-5">
-                          <button class="btn btn-outline-success" type="button" data-form-step="#personal">
-                            <i class="icon-arrow-left font-sm"></i> Antes
-                          </button>
-                          <button class="btn btn-success ml-auto" type="button" data-form-step="#confirmation">
-                            Repuestos <i class="icon-arrow-right font-sm"></i>
-                          </button>
-                        </div>
-                      </div>
-
                     </div>
+                    <div class="col-12 col-lg-6">
+                      <div class="row">
+                        <div class="col-12">
+                          <div class="form-group">
+                            <label>Documentación Terreno:</label>
+                            <div class="row ml-auto">
+                              <label class="checkbox-primary checkbox">
+                                <input id="checkDPR2" type="checkbox" />
+                                <span class="check-mark"></span> Procedimientos Trabajo (DPR)
+                              </label>
+                            </div>
+                            <div class="row ml-auto">
+                              <label class="checkbox-primary checkbox">
+                                <input id="checkTrabajo2" type="checkbox" />
+                                <span class="check-mark"></span> Instructivos Trabajo
+                              </label>
+                            </div>
+                            <div class="row ml-auto">
+                              <label class="checkbox-primary checkbox">
+                                <input id="checkEquipo2" type="checkbox" />
+                                <span class="check-mark"></span> Check List Equipo
+                              </label>
+                            </div>
+                            <div class="row ml-auto">
+                              <label class="checkbox-primary checkbox">
+                                <input id="checkAST2" type="checkbox" />
+                                <span class="check-mark"></span> AST Firmada
+                              </label>
+                            </div>
+                          </div>
+                        </div>
 
+                      </div>
+                    </div>
                   </div>
-                  <div id="confirmation" class="tab-pane">
-                    <div class="mb-3">
-                      <a href="#confirmation-collapse" data-toggle="collapse">
-                        <span class="font-lg">4.</span> Repuestos
-                        <small class="d-block text-secondary"> Datos de los Repuestos Utilizados y Otros
-                        </small>
-                      </a>
-                    </div>
-                    <div id="confirmation-collapse" class="collapse" data-parent="#employeeForm">
-                      <div class="text-secondary mb-3">
-                        <small>Paso 4 de 4</small>
-                      </div>
-                      <div class="row">
-                        <div class="clo-md-3 col-lg-3"></div>
-                        <div class="col-12 col-md-6 col-lg-6">
-                          <div class="form-group">
-                            <label>Descripción de Repuestos y Otros</label>
-                            <br>
-                            <textarea id="salida_tres" rows="2" cols="50" name="Repuestos" class="form-control mb-3"></textarea>
-                            <div class="col-sm-1 px-0">
+                  <div class="row mb-3" id="itemsD">
+                    <div class="row">
+                      <div class="col-12 col-md-6 col-lg-6">
+                        <div class="form-group">
+                          <label>Descripción de la Actividad</label>
+                          <br>
+
+                          <textarea id="salida_dos" rows="4" cols="50" name='Descripcion' class="form-control mb-3"></textarea>
+                          <div class="col-sm-1 px-0">
                             <button type="button" class="btn btn-light btn-round btn-lg btn-fab"
-                                                        id="btnVozATexto4" onclick="startArtyom()">
-                                                    <i class="material-icons">mic</i>
-                                                </button>
-                                            </div>
+                            id="btnVozATexto2" onclick="startArtyom()">
+                              <i class="material-icons">mic</i>
+                            </button>
                           </div>
                         </div>
+                      </div>
+
+                      <div class="col-12 col-lg-6">
+                        <div class="row">
+                          <div class="col-12">
+                            <div action="/" class="dropzone ml-1" id="my-awesome-dropzone-2">
+                              <div class="dz-message">
+                                <div class="drag-icon-cph">
+                                  <i class="material-icons">touch_app</i>
+                                </div>
+                                <h4>Arrastre las imágenes o haga clic aquí para subirlas</h4>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-lg-8 col-md-10 ml-auto mr-auto">
+                      <button class="btn btn-primary btn-block" onclick="newitemD('Despues')">Agregar Nuevo Item</button>
+                    </div>
+                  </div>
+                  <div class="row">
+
+                    <div class="clo-md-3 col-lg-3"></div>
+                    <div class="col-12 col-md-6 col-lg-6">
+                      <div class="form-group">
+                        <label>Observaciones</label>
                         <br>
-                      </div>
-                      <hr>
-                      <div class="d-block d-md-flex">
-                        <button type="button" class="btn btn-outline-success d-none d-md-inline mb-3" data-form-step="#payment">
-                          <i class="icon-arrow-left font-sm"></i>
-                          Después
-                        </button>
-                        <div class="d-block d-md-inline ml-auto mb-3">
-                          <button type="submit" class="btn btn-success btn-block" id="btnFinalizar">
-                            Finalizar
+                        <textarea id="salidaObsDos" rows="4" cols="50" name='Observación' class="form-control mb-3"></textarea>
+                        <div class="col-sm-1 px-0">
+                          <button type="button" class="btn btn-light btn-round btn-lg btn-fab"
+                          id="btnVozATexto3" onclick="startArtyom()">
+                            <i class="material-icons">mic</i>
                           </button>
                         </div>
                       </div>
                     </div>
                   </div>
+
+                  <div class="d-none d-md-block">
+                    <hr>
+                    <div class="d-flex mb-5">
+                      <button class="btn btn-outline-success" type="button" data-form-step="#personal">
+                        <i class="icon-arrow-left font-sm"></i> Antes
+                      </button>
+                      <button class="btn btn-success ml-auto" type="button" data-form-step="#confirmation">
+                        Repuestos <i class="icon-arrow-right font-sm"></i>
+                      </button>
+                    </div>
+                  </div>
+
+                </div>
+
+              </div>
+              <div id="confirmation" class="tab-pane">
+                <div class="mb-3">
+                  <a href="#confirmation-collapse" data-toggle="collapse">
+                    <span class="font-lg">4.</span> Repuestos
+                    <small class="d-block text-secondary"> Datos de los Repuestos Utilizados y Otros
+                    </small>
+                  </a>
+                </div>
+                <div id="confirmation-collapse" class="collapse" data-parent="#employeeForm">
+                  <div class="text-secondary mb-3">
+                    <small>Paso 4 de 4</small>
+                  </div>
+                  <div class="row">
+                    <div class="clo-md-3 col-lg-3"></div>
+                    <div class="col-12 col-md-6 col-lg-6">
+                      <div class="form-group">
+                        <label>Descripción de Repuestos y Otros</label>
+                        <br>
+                        <textarea id="salida_tres" rows="2" cols="50" name="Repuestos" class="form-control mb-3"></textarea>
+                        <div class="col-sm-1 px-0">
+                          <button type="button" class="btn btn-light btn-round btn-lg btn-fab"
+                          id="btnVozATexto4" onclick="startArtyom()">
+                            <i class="material-icons">mic</i>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    <br>
+                  </div>
+                  <hr>
+                  <div class="d-block d-md-flex">
+                    <button type="button" class="btn btn-outline-success d-none d-md-inline mb-3" data-form-step="#payment">
+                      <i class="icon-arrow-left font-sm"></i>
+                      Después
+                    </button>
+                    <div class="d-block d-md-inline ml-auto mb-3">
+                      <button type="submit" class="btn btn-success btn-block" id="btnFinalizar">
+                        Finalizar
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </form>
           </div>
         </div>
@@ -703,107 +714,107 @@
           </button>
         </div>
         <div class="modal-body">
-            <div class="row">
-                <div class="col-1"></div>
-              <div class="col-6">
-          <div class="date_range outside">
-            <div class="date_range_container">
-              <div class="date_range_from">
+          <div class="row">
+            <div class="col-1"></div>
+            <div class="col-6">
+              <div class="date_range outside">
+                <div class="date_range_container">
+                  <div class="date_range_from">
 
-                <select class="date date1" id="from_hours1" name="from_hours1">
-                  <option value="0">00</option>
-                  <option value="1">01</option>
-                  <option value="2">02</option>
-                  <option value="3">03</option>
-                  <option value="4">04</option>
-                  <option value="5">05</option>
-                  <option value="6">06</option>
-                  <option value="7">07</option>
-                  <option value="8">08</option>
-                  <option value="9">09</option>
-                  <option value="10">10</option>
-                  <option value="11">11</option>
-                  <option value="12">12</option>
-                  <option value="13">13</option>
-                  <option value="14">14</option>
-                  <option value="15">15</option>
-                  <option value="16">16</option>
-                  <option value="17">17</option>
-                  <option value="18">18</option>
-                  <option value="19">19</option>
-                  <option value="20">20</option>
-                  <option value="21">21</option>
-                  <option value="22">22</option>
-                  <option value="23">23</option>
-                </select>
-                <select class="date date1" id="from_minutes1" name="from_minutes1">
-                  <option value="0">00</option>
-                  <option value="1">01</option>
-                  <option value="2">02</option>
-                  <option value="3">03</option>
-                  <option value="4">04</option>
-                  <option value="5">05</option>
-                  <option value="6">06</option>
-                  <option value="7">07</option>
-                  <option value="8">08</option>
-                  <option value="9">09</option>
-                  <option value="10">10</option>
-                  <option value="11">11</option>
-                  <option value="12">12</option>
-                  <option value="13">13</option>
-                  <option value="14">14</option>
-                  <option value="15">15</option>
-                  <option value="16">16</option>
-                  <option value="17">17</option>
-                  <option value="18">18</option>
-                  <option value="19">19</option>
-                  <option value="20">20</option>
-                  <option value="21">21</option>
-                  <option value="22">22</option>
-                  <option value="23">23</option>
-                  <option value="24">24</option>
-                  <option value="25">25</option>
-                  <option value="26">26</option>
-                  <option value="27">27</option>
-                  <option value="28">28</option>
-                  <option value="29">29</option>
-                  <option value="30">30</option>
-                  <option value="31">31</option>
-                  <option value="32">32</option>
-                  <option value="33">33</option>
-                  <option value="34">34</option>
-                  <option value="35">35</option>
-                  <option value="36">36</option>
-                  <option value="37">37</option>
-                  <option value="38">38</option>
-                  <option value="39">39</option>
-                  <option value="40">40</option>
-                  <option value="41">41</option>
-                  <option value="42">42</option>
-                  <option value="43">43</option>
-                  <option value="44">44</option>
-                  <option value="45">45</option>
-                  <option value="46">46</option>
-                  <option value="47">47</option>
-                  <option value="48">48</option>
-                  <option value="49">49</option>
-                  <option value="50">50</option>
-                  <option value="51">51</option>
-                  <option value="52">52</option>
-                  <option value="53">53</option>
-                  <option value="54">54</option>
-                  <option value="55">55</option>
-                  <option value="56">56</option>
-                  <option value="57">57</option>
-                  <option value="58">58</option>
-                  <option value="59">59</option>
-                </select>
-                </form>
+                    <select class="date date1" id="from_hours1" name="from_hours1">
+                      <option value="0">00</option>
+                      <option value="1">01</option>
+                      <option value="2">02</option>
+                      <option value="3">03</option>
+                      <option value="4">04</option>
+                      <option value="5">05</option>
+                      <option value="6">06</option>
+                      <option value="7">07</option>
+                      <option value="8">08</option>
+                      <option value="9">09</option>
+                      <option value="10">10</option>
+                      <option value="11">11</option>
+                      <option value="12">12</option>
+                      <option value="13">13</option>
+                      <option value="14">14</option>
+                      <option value="15">15</option>
+                      <option value="16">16</option>
+                      <option value="17">17</option>
+                      <option value="18">18</option>
+                      <option value="19">19</option>
+                      <option value="20">20</option>
+                      <option value="21">21</option>
+                      <option value="22">22</option>
+                      <option value="23">23</option>
+                    </select>
+                    <select class="date date1" id="from_minutes1" name="from_minutes1">
+                      <option value="0">00</option>
+                      <option value="1">01</option>
+                      <option value="2">02</option>
+                      <option value="3">03</option>
+                      <option value="4">04</option>
+                      <option value="5">05</option>
+                      <option value="6">06</option>
+                      <option value="7">07</option>
+                      <option value="8">08</option>
+                      <option value="9">09</option>
+                      <option value="10">10</option>
+                      <option value="11">11</option>
+                      <option value="12">12</option>
+                      <option value="13">13</option>
+                      <option value="14">14</option>
+                      <option value="15">15</option>
+                      <option value="16">16</option>
+                      <option value="17">17</option>
+                      <option value="18">18</option>
+                      <option value="19">19</option>
+                      <option value="20">20</option>
+                      <option value="21">21</option>
+                      <option value="22">22</option>
+                      <option value="23">23</option>
+                      <option value="24">24</option>
+                      <option value="25">25</option>
+                      <option value="26">26</option>
+                      <option value="27">27</option>
+                      <option value="28">28</option>
+                      <option value="29">29</option>
+                      <option value="30">30</option>
+                      <option value="31">31</option>
+                      <option value="32">32</option>
+                      <option value="33">33</option>
+                      <option value="34">34</option>
+                      <option value="35">35</option>
+                      <option value="36">36</option>
+                      <option value="37">37</option>
+                      <option value="38">38</option>
+                      <option value="39">39</option>
+                      <option value="40">40</option>
+                      <option value="41">41</option>
+                      <option value="42">42</option>
+                      <option value="43">43</option>
+                      <option value="44">44</option>
+                      <option value="45">45</option>
+                      <option value="46">46</option>
+                      <option value="47">47</option>
+                      <option value="48">48</option>
+                      <option value="49">49</option>
+                      <option value="50">50</option>
+                      <option value="51">51</option>
+                      <option value="52">52</option>
+                      <option value="53">53</option>
+                      <option value="54">54</option>
+                      <option value="55">55</option>
+                      <option value="56">56</option>
+                      <option value="57">57</option>
+                      <option value="58">58</option>
+                      <option value="59">59</option>
+                    </select>
+                    </form>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
 
         </div>
         <div class="modal-footer">
@@ -827,106 +838,106 @@
         <div class="modal-body">
           <div class="row">
             <div class="col-1"></div>
-          <div class="col-6">
+            <div class="col-6">
 
-          <div class="date_range outside">
-            <div class="date_range_container">
-              <div class="date_range_from">
+              <div class="date_range outside">
+                <div class="date_range_container">
+                  <div class="date_range_from">
 
-                <select class="date date2" id="from_hours2" name="from_hours2">
-                  <option value="0">00</option>
-                  <option value="1">01</option>
-                  <option value="2">02</option>
-                  <option value="3">03</option>
-                  <option value="4">04</option>
-                  <option value="5">05</option>
-                  <option value="6">06</option>
-                  <option value="7">07</option>
-                  <option value="8">08</option>
-                  <option value="9">09</option>
-                  <option value="10">10</option>
-                  <option value="11">11</option>
-                  <option value="12">12</option>
-                  <option value="13">13</option>
-                  <option value="14">14</option>
-                  <option value="15">15</option>
-                  <option value="16">16</option>
-                  <option value="17">17</option>
-                  <option value="18">18</option>
-                  <option value="19">19</option>
-                  <option value="20">20</option>
-                  <option value="21">21</option>
-                  <option value="22">22</option>
-                  <option value="23">23</option>
-                </select>
-                <select class="date date2" id="from_minutes2" name="from_minutes2">
-                  <option value="0">00</option>
-                  <option value="1">01</option>
-                  <option value="2">02</option>
-                  <option value="3">03</option>
-                  <option value="4">04</option>
-                  <option value="5">05</option>
-                  <option value="6">06</option>
-                  <option value="7">07</option>
-                  <option value="8">08</option>
-                  <option value="9">09</option>
-                  <option value="10">10</option>
-                  <option value="11">11</option>
-                  <option value="12">12</option>
-                  <option value="13">13</option>
-                  <option value="14">14</option>
-                  <option value="15">15</option>
-                  <option value="16">16</option>
-                  <option value="17">17</option>
-                  <option value="18">18</option>
-                  <option value="19">19</option>
-                  <option value="20">20</option>
-                  <option value="21">21</option>
-                  <option value="22">22</option>
-                  <option value="23">23</option>
-                  <option value="24">24</option>
-                  <option value="25">25</option>
-                  <option value="26">26</option>
-                  <option value="27">27</option>
-                  <option value="28">28</option>
-                  <option value="29">29</option>
-                  <option value="30">30</option>
-                  <option value="31">31</option>
-                  <option value="32">32</option>
-                  <option value="33">33</option>
-                  <option value="34">34</option>
-                  <option value="35">35</option>
-                  <option value="36">36</option>
-                  <option value="37">37</option>
-                  <option value="38">38</option>
-                  <option value="39">39</option>
-                  <option value="40">40</option>
-                  <option value="41">41</option>
-                  <option value="42">42</option>
-                  <option value="43">43</option>
-                  <option value="44">44</option>
-                  <option value="45">45</option>
-                  <option value="46">46</option>
-                  <option value="47">47</option>
-                  <option value="48">48</option>
-                  <option value="49">49</option>
-                  <option value="50">50</option>
-                  <option value="51">51</option>
-                  <option value="52">52</option>
-                  <option value="53">53</option>
-                  <option value="54">54</option>
-                  <option value="55">55</option>
-                  <option value="56">56</option>
-                  <option value="57">57</option>
-                  <option value="58">58</option>
-                  <option value="59">59</option>
-                </select>
-                </form>
+                    <select class="date date2" id="from_hours2" name="from_hours2">
+                      <option value="0">00</option>
+                      <option value="1">01</option>
+                      <option value="2">02</option>
+                      <option value="3">03</option>
+                      <option value="4">04</option>
+                      <option value="5">05</option>
+                      <option value="6">06</option>
+                      <option value="7">07</option>
+                      <option value="8">08</option>
+                      <option value="9">09</option>
+                      <option value="10">10</option>
+                      <option value="11">11</option>
+                      <option value="12">12</option>
+                      <option value="13">13</option>
+                      <option value="14">14</option>
+                      <option value="15">15</option>
+                      <option value="16">16</option>
+                      <option value="17">17</option>
+                      <option value="18">18</option>
+                      <option value="19">19</option>
+                      <option value="20">20</option>
+                      <option value="21">21</option>
+                      <option value="22">22</option>
+                      <option value="23">23</option>
+                    </select>
+                    <select class="date date2" id="from_minutes2" name="from_minutes2">
+                      <option value="0">00</option>
+                      <option value="1">01</option>
+                      <option value="2">02</option>
+                      <option value="3">03</option>
+                      <option value="4">04</option>
+                      <option value="5">05</option>
+                      <option value="6">06</option>
+                      <option value="7">07</option>
+                      <option value="8">08</option>
+                      <option value="9">09</option>
+                      <option value="10">10</option>
+                      <option value="11">11</option>
+                      <option value="12">12</option>
+                      <option value="13">13</option>
+                      <option value="14">14</option>
+                      <option value="15">15</option>
+                      <option value="16">16</option>
+                      <option value="17">17</option>
+                      <option value="18">18</option>
+                      <option value="19">19</option>
+                      <option value="20">20</option>
+                      <option value="21">21</option>
+                      <option value="22">22</option>
+                      <option value="23">23</option>
+                      <option value="24">24</option>
+                      <option value="25">25</option>
+                      <option value="26">26</option>
+                      <option value="27">27</option>
+                      <option value="28">28</option>
+                      <option value="29">29</option>
+                      <option value="30">30</option>
+                      <option value="31">31</option>
+                      <option value="32">32</option>
+                      <option value="33">33</option>
+                      <option value="34">34</option>
+                      <option value="35">35</option>
+                      <option value="36">36</option>
+                      <option value="37">37</option>
+                      <option value="38">38</option>
+                      <option value="39">39</option>
+                      <option value="40">40</option>
+                      <option value="41">41</option>
+                      <option value="42">42</option>
+                      <option value="43">43</option>
+                      <option value="44">44</option>
+                      <option value="45">45</option>
+                      <option value="46">46</option>
+                      <option value="47">47</option>
+                      <option value="48">48</option>
+                      <option value="49">49</option>
+                      <option value="50">50</option>
+                      <option value="51">51</option>
+                      <option value="52">52</option>
+                      <option value="53">53</option>
+                      <option value="54">54</option>
+                      <option value="55">55</option>
+                      <option value="56">56</option>
+                      <option value="57">57</option>
+                      <option value="58">58</option>
+                      <option value="59">59</option>
+                    </select>
+                    </form>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
 
         </div>
         <div class="modal-footer">
@@ -949,108 +960,108 @@
         </div>
         <div class="modal-body">
 
-            <div class="row">
-                <div class="col-1"></div>
-              <div class="col-6">
-    
-          <div class="date_range outside">
-            <div class="date_range_container">
-              <div class="date_range_from">
+          <div class="row">
+            <div class="col-1"></div>
+            <div class="col-6">
 
-                <select class="date date3" id="from_hours3" name="from_hours3">
-                  <option value="0">00</option>
-                  <option value="1">01</option>
-                  <option value="2">02</option>
-                  <option value="3">03</option>
-                  <option value="4">04</option>
-                  <option value="5">05</option>
-                  <option value="6">06</option>
-                  <option value="7">07</option>
-                  <option value="8">08</option>
-                  <option value="9">09</option>
-                  <option value="10">10</option>
-                  <option value="11">11</option>
-                  <option value="12">12</option>
-                  <option value="13">13</option>
-                  <option value="14">14</option>
-                  <option value="15">15</option>
-                  <option value="16">16</option>
-                  <option value="17">17</option>
-                  <option value="18">18</option>
-                  <option value="19">19</option>
-                  <option value="20">20</option>
-                  <option value="21">21</option>
-                  <option value="22">22</option>
-                  <option value="23">23</option>
-                </select>
-                <select class="date date3" id="from_minutes3" name="from_minutes3">
-                  <option value="0">00</option>
-                  <option value="1">01</option>
-                  <option value="2">02</option>
-                  <option value="3">03</option>
-                  <option value="4">04</option>
-                  <option value="5">05</option>
-                  <option value="6">06</option>
-                  <option value="7">07</option>
-                  <option value="8">08</option>
-                  <option value="9">09</option>
-                  <option value="10">10</option>
-                  <option value="11">11</option>
-                  <option value="12">12</option>
-                  <option value="13">13</option>
-                  <option value="14">14</option>
-                  <option value="15">15</option>
-                  <option value="16">16</option>
-                  <option value="17">17</option>
-                  <option value="18">18</option>
-                  <option value="19">19</option>
-                  <option value="20">20</option>
-                  <option value="21">21</option>
-                  <option value="22">22</option>
-                  <option value="23">23</option>
-                  <option value="24">24</option>
-                  <option value="25">25</option>
-                  <option value="26">26</option>
-                  <option value="27">27</option>
-                  <option value="28">28</option>
-                  <option value="29">29</option>
-                  <option value="30">30</option>
-                  <option value="31">31</option>
-                  <option value="32">32</option>
-                  <option value="33">33</option>
-                  <option value="34">34</option>
-                  <option value="35">35</option>
-                  <option value="36">36</option>
-                  <option value="37">37</option>
-                  <option value="38">38</option>
-                  <option value="39">39</option>
-                  <option value="40">40</option>
-                  <option value="41">41</option>
-                  <option value="42">42</option>
-                  <option value="43">43</option>
-                  <option value="44">44</option>
-                  <option value="45">45</option>
-                  <option value="46">46</option>
-                  <option value="47">47</option>
-                  <option value="48">48</option>
-                  <option value="49">49</option>
-                  <option value="50">50</option>
-                  <option value="51">51</option>
-                  <option value="52">52</option>
-                  <option value="53">53</option>
-                  <option value="54">54</option>
-                  <option value="55">55</option>
-                  <option value="56">56</option>
-                  <option value="57">57</option>
-                  <option value="58">58</option>
-                  <option value="59">59</option>
-                </select>
-                </form>
+              <div class="date_range outside">
+                <div class="date_range_container">
+                  <div class="date_range_from">
+
+                    <select class="date date3" id="from_hours3" name="from_hours3">
+                      <option value="0">00</option>
+                      <option value="1">01</option>
+                      <option value="2">02</option>
+                      <option value="3">03</option>
+                      <option value="4">04</option>
+                      <option value="5">05</option>
+                      <option value="6">06</option>
+                      <option value="7">07</option>
+                      <option value="8">08</option>
+                      <option value="9">09</option>
+                      <option value="10">10</option>
+                      <option value="11">11</option>
+                      <option value="12">12</option>
+                      <option value="13">13</option>
+                      <option value="14">14</option>
+                      <option value="15">15</option>
+                      <option value="16">16</option>
+                      <option value="17">17</option>
+                      <option value="18">18</option>
+                      <option value="19">19</option>
+                      <option value="20">20</option>
+                      <option value="21">21</option>
+                      <option value="22">22</option>
+                      <option value="23">23</option>
+                    </select>
+                    <select class="date date3" id="from_minutes3" name="from_minutes3">
+                      <option value="0">00</option>
+                      <option value="1">01</option>
+                      <option value="2">02</option>
+                      <option value="3">03</option>
+                      <option value="4">04</option>
+                      <option value="5">05</option>
+                      <option value="6">06</option>
+                      <option value="7">07</option>
+                      <option value="8">08</option>
+                      <option value="9">09</option>
+                      <option value="10">10</option>
+                      <option value="11">11</option>
+                      <option value="12">12</option>
+                      <option value="13">13</option>
+                      <option value="14">14</option>
+                      <option value="15">15</option>
+                      <option value="16">16</option>
+                      <option value="17">17</option>
+                      <option value="18">18</option>
+                      <option value="19">19</option>
+                      <option value="20">20</option>
+                      <option value="21">21</option>
+                      <option value="22">22</option>
+                      <option value="23">23</option>
+                      <option value="24">24</option>
+                      <option value="25">25</option>
+                      <option value="26">26</option>
+                      <option value="27">27</option>
+                      <option value="28">28</option>
+                      <option value="29">29</option>
+                      <option value="30">30</option>
+                      <option value="31">31</option>
+                      <option value="32">32</option>
+                      <option value="33">33</option>
+                      <option value="34">34</option>
+                      <option value="35">35</option>
+                      <option value="36">36</option>
+                      <option value="37">37</option>
+                      <option value="38">38</option>
+                      <option value="39">39</option>
+                      <option value="40">40</option>
+                      <option value="41">41</option>
+                      <option value="42">42</option>
+                      <option value="43">43</option>
+                      <option value="44">44</option>
+                      <option value="45">45</option>
+                      <option value="46">46</option>
+                      <option value="47">47</option>
+                      <option value="48">48</option>
+                      <option value="49">49</option>
+                      <option value="50">50</option>
+                      <option value="51">51</option>
+                      <option value="52">52</option>
+                      <option value="53">53</option>
+                      <option value="54">54</option>
+                      <option value="55">55</option>
+                      <option value="56">56</option>
+                      <option value="57">57</option>
+                      <option value="58">58</option>
+                      <option value="59">59</option>
+                    </select>
+                    </form>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
 
         </div>
         <div class="modal-footer">
@@ -1061,8 +1072,8 @@
     </div>
   </div>
 
-   <!-- Modal para hora de fin Despues -->
-   <div class="modal fade" id="horamodal4" tabindex="-1" role="dialog" aria-labelledby="horamodal4Label" aria-hidden="true">
+  <!-- Modal para hora de fin Despues -->
+  <div class="modal fade" id="horamodal4" tabindex="-1" role="dialog" aria-labelledby="horamodal4Label" aria-hidden="true">
     <div class="modal-dialog modal-sm" role="document">
       <div class="modal-content">
         <div class="modal-header head">
@@ -1072,110 +1083,110 @@
           </button>
         </div>
         <div class="modal-body">
-<div class="row">
-  <div class="col-1"></div>
-<div class="col-6">
+          <div class="row">
+            <div class="col-1"></div>
+            <div class="col-6">
 
-          <div class="date_range outside">
-            <div class="date_range_container">
-              <div class="date_range_from">
+              <div class="date_range outside">
+                <div class="date_range_container">
+                  <div class="date_range_from">
 
-                <select class="date date4" id="from_hours4" name="from_hours4">
-                  <option value="0">00</option>
-                  <option value="1">01</option>
-                  <option value="2">02</option>
-                  <option value="3">03</option>
-                  <option value="4">04</option>
-                  <option value="5">05</option>
-                  <option value="6">06</option>
-                  <option value="7">07</option>
-                  <option value="8">08</option>
-                  <option value="9">09</option>
-                  <option value="10">10</option>
-                  <option value="11">11</option>
-                  <option value="12">12</option>
-                  <option value="13">13</option>
-                  <option value="14">14</option>
-                  <option value="15">15</option>
-                  <option value="16">16</option>
-                  <option value="17">17</option>
-                  <option value="18">18</option>
-                  <option value="19">19</option>
-                  <option value="20">20</option>
-                  <option value="21">21</option>
-                  <option value="22">22</option>
-                  <option value="23">23</option>
-                </select>
-                <select class="date date4" id="from_minutes4" name="from_minutes4">
-                  <option value="0">00</option>
-                  <option value="1">01</option>
-                  <option value="2">02</option>
-                  <option value="3">03</option>
-                  <option value="4">04</option>
-                  <option value="5">05</option>
-                  <option value="6">06</option>
-                  <option value="7">07</option>
-                  <option value="8">08</option>
-                  <option value="9">09</option>
-                  <option value="10">10</option>
-                  <option value="11">11</option>
-                  <option value="12">12</option>
-                  <option value="13">13</option>
-                  <option value="14">14</option>
-                  <option value="15">15</option>
-                  <option value="16">16</option>
-                  <option value="17">17</option>
-                  <option value="18">18</option>
-                  <option value="19">19</option>
-                  <option value="20">20</option>
-                  <option value="21">21</option>
-                  <option value="22">22</option>
-                  <option value="23">23</option>
-                  <option value="24">24</option>
-                  <option value="25">25</option>
-                  <option value="26">26</option>
-                  <option value="27">27</option>
-                  <option value="28">28</option>
-                  <option value="29">29</option>
-                  <option value="30">30</option>
-                  <option value="31">31</option>
-                  <option value="32">32</option>
-                  <option value="33">33</option>
-                  <option value="34">34</option>
-                  <option value="35">35</option>
-                  <option value="36">36</option>
-                  <option value="37">37</option>
-                  <option value="38">38</option>
-                  <option value="39">39</option>
-                  <option value="40">40</option>
-                  <option value="41">41</option>
-                  <option value="42">42</option>
-                  <option value="43">43</option>
-                  <option value="44">44</option>
-                  <option value="45">45</option>
-                  <option value="46">46</option>
-                  <option value="47">47</option>
-                  <option value="48">48</option>
-                  <option value="49">49</option>
-                  <option value="50">50</option>
-                  <option value="51">51</option>
-                  <option value="52">52</option>
-                  <option value="53">53</option>
-                  <option value="54">54</option>
-                  <option value="55">55</option>
-                  <option value="56">56</option>
-                  <option value="57">57</option>
-                  <option value="58">58</option>
-                  <option value="59">59</option>
-                </select>
-                </form>
+                    <select class="date date4" id="from_hours4" name="from_hours4">
+                      <option value="0">00</option>
+                      <option value="1">01</option>
+                      <option value="2">02</option>
+                      <option value="3">03</option>
+                      <option value="4">04</option>
+                      <option value="5">05</option>
+                      <option value="6">06</option>
+                      <option value="7">07</option>
+                      <option value="8">08</option>
+                      <option value="9">09</option>
+                      <option value="10">10</option>
+                      <option value="11">11</option>
+                      <option value="12">12</option>
+                      <option value="13">13</option>
+                      <option value="14">14</option>
+                      <option value="15">15</option>
+                      <option value="16">16</option>
+                      <option value="17">17</option>
+                      <option value="18">18</option>
+                      <option value="19">19</option>
+                      <option value="20">20</option>
+                      <option value="21">21</option>
+                      <option value="22">22</option>
+                      <option value="23">23</option>
+                    </select>
+                    <select class="date date4" id="from_minutes4" name="from_minutes4">
+                      <option value="0">00</option>
+                      <option value="1">01</option>
+                      <option value="2">02</option>
+                      <option value="3">03</option>
+                      <option value="4">04</option>
+                      <option value="5">05</option>
+                      <option value="6">06</option>
+                      <option value="7">07</option>
+                      <option value="8">08</option>
+                      <option value="9">09</option>
+                      <option value="10">10</option>
+                      <option value="11">11</option>
+                      <option value="12">12</option>
+                      <option value="13">13</option>
+                      <option value="14">14</option>
+                      <option value="15">15</option>
+                      <option value="16">16</option>
+                      <option value="17">17</option>
+                      <option value="18">18</option>
+                      <option value="19">19</option>
+                      <option value="20">20</option>
+                      <option value="21">21</option>
+                      <option value="22">22</option>
+                      <option value="23">23</option>
+                      <option value="24">24</option>
+                      <option value="25">25</option>
+                      <option value="26">26</option>
+                      <option value="27">27</option>
+                      <option value="28">28</option>
+                      <option value="29">29</option>
+                      <option value="30">30</option>
+                      <option value="31">31</option>
+                      <option value="32">32</option>
+                      <option value="33">33</option>
+                      <option value="34">34</option>
+                      <option value="35">35</option>
+                      <option value="36">36</option>
+                      <option value="37">37</option>
+                      <option value="38">38</option>
+                      <option value="39">39</option>
+                      <option value="40">40</option>
+                      <option value="41">41</option>
+                      <option value="42">42</option>
+                      <option value="43">43</option>
+                      <option value="44">44</option>
+                      <option value="45">45</option>
+                      <option value="46">46</option>
+                      <option value="47">47</option>
+                      <option value="48">48</option>
+                      <option value="49">49</option>
+                      <option value="50">50</option>
+                      <option value="51">51</option>
+                      <option value="52">52</option>
+                      <option value="53">53</option>
+                      <option value="54">54</option>
+                      <option value="55">55</option>
+                      <option value="56">56</option>
+                      <option value="57">57</option>
+                      <option value="58">58</option>
+                      <option value="59">59</option>
+                    </select>
+                    </form>
+                  </div>
+                </div>
               </div>
+
+
             </div>
           </div>
-
-
-</div>
-</div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
@@ -1217,12 +1228,12 @@
 
 
         var format = pad(date.getHours()) + ':' + pad(date.getMinutes());
-        
+
         $('.selection-title1').html(format)
       }
     });
 
-$("select.date2").drum({
+    $("select.date2").drum({
       onChange: function (elem) {
 
         var arr = { 'from_hours2': 'setHours', 'from_minutes2': 'setMinutes' };
@@ -1242,7 +1253,7 @@ $("select.date2").drum({
       }
     });
 
-$("select.date3").drum({
+    $("select.date3").drum({
       onChange: function (elem) {
 
         var arr = { 'from_hours3': 'setHours', 'from_minutes3': 'setMinutes' };
@@ -1262,7 +1273,7 @@ $("select.date3").drum({
       }
     });
 
-$("select.date4").drum({
+    $("select.date4").drum({
       onChange: function (elem) {
 
         var arr = { 'from_hours4': 'setHours', 'from_minutes4': 'setMinutes' };
@@ -1282,10 +1293,10 @@ $("select.date4").drum({
       }
     });
 
-//para setear el valor obtenido en el combo
-function setearhoraInicioAntes(i,hora){
-  $(`.selection${i}`).val($(`.selection-title${i}`)[0].textContent)
-}
+    //para setear el valor obtenido en el combo
+    function setearhoraInicioAntes(i,hora){
+      $(`.selection${i}`).val($(`.selection-title${i}`)[0].textContent)
+    }
 
 
     $('[data-form-step]').on('click', function () {
@@ -1372,85 +1383,85 @@ function setearhoraInicioAntes(i,hora){
     ]);
     // Escribir lo que escucha.
     artyom.redirectRecognizedTextOutput(function (text, isFinal) {
-  var texto = $('#salida_uno');
-  var salto = "\n";
-  if (isFinal) {
-    if(texto.val() == "") {
-      salto = "";
-    }
-    
-    texto.val(texto.val() + salto + text);
-    
-    
-    autosize.update(texto);
-  }
-});
-  
+      var texto = $('#salida_uno');
+      var salto = "\n";
+      if (isFinal) {
+        if(texto.val() == "") {
+          salto = "";
+        }
+
+        texto.val(texto.val() + salto + text);
+
+
+        autosize.update(texto);
+      }
+    });
+
     $('#btnVozATexto1').on('click', function (e) {
       startArtyom();
       artyom.redirectRecognizedTextOutput(function (text, isFinal) {
-      var texto = $('#salidaObs');
-      var salto = "\n";
-      if (isFinal) {
-      if(texto.val() == "") {
-      salto = "";
-    }
-    texto.val(texto.val() + salto + text);
-    
-    
-    autosize.update(texto);
-  }
-});
- });     
-     $('#btnVozATexto2').on('click', function (e) {
+        var texto = $('#salidaObs');
+        var salto = "\n";
+        if (isFinal) {
+          if (texto.val() == "") {
+            salto = "";
+          }
+          texto.val(texto.val() + salto + text);
+
+
+          autosize.update(texto);
+        }
+      });
+    });
+    $('#btnVozATexto2').on('click', function (e) {
       startArtyom();
       artyom.redirectRecognizedTextOutput(function (text, isFinal) {
-      var texto = $('#salida_dos');
-      var salto = "\n";
-      if (isFinal) {
-      if(texto.val() == "") {
-      salto = "";
-    }
-    texto.val(texto.val() + salto + text);
-    
-    
-    autosize.update(texto);
-  }
-});
- });     
+        var texto = $('#salida_dos');
+        var salto = "\n";
+        if (isFinal) {
+          if (texto.val() == "") {
+            salto = "";
+          }
+          texto.val(texto.val() + salto + text);
+
+
+          autosize.update(texto);
+        }
+      });
+    });
     $('#btnVozATexto3').on('click', function (e) {
       startArtyom();
       artyom.redirectRecognizedTextOutput(function (text, isFinal) {
-      var texto = $('#salidaObsDos');
-      var salto = "\n";
-      if (isFinal) {
-      if(texto.val() == "") {
-      salto = "";
-    }
-    texto.val(texto.val() + salto + text);
-    
-    
-    autosize.update(texto);
-  }
-});
- });     
-   
+        var texto = $('#salidaObsDos');
+        var salto = "\n";
+        if (isFinal) {
+          if (texto.val() == "") {
+            salto = "";
+          }
+          texto.val(texto.val() + salto + text);
+
+
+          autosize.update(texto);
+        }
+      });
+    });
+
     $('#btnVozATexto4').on('click', function (e) {
       startArtyom();
       artyom.redirectRecognizedTextOutput(function (text, isFinal) {
         var texto = $('#salida_tres');
         var salto = "\n";
         if (isFinal) {
-        if(texto.val() == "") {
-        salto = "";
-    }
-    texto.val(texto.val() + salto + text);
-    
-    
-    autosize.update(texto);
-  }
-});
-});     
+          if (texto.val() == "") {
+            salto = "";
+          }
+          texto.val(texto.val() + salto + text);
+
+
+          autosize.update(texto);
+        }
+      });
+    });
     $('#pause-des-tres').on('click', function (e) {
       stopArtyom();
     });
@@ -1499,6 +1510,120 @@ function setearhoraInicioAntes(i,hora){
         alert("Your browser cannot talk !");
       }
     });
+
+    //funcionalidad del artyom
+    function ejecutarvoz(crono, item) {
+
+      startArtyom();
+      artyom.redirectRecognizedTextOutput(function (text, isFinal) {
+        var texto = $('#salida' + crono + item);
+        var salto = "\n";
+        if (isFinal) {
+          if (texto.val() == "") {
+            salto = "";
+          }
+          texto.val(texto.val() + salto + text);
+
+          autosize.update(texto);
+        }
+      });
+    }
+
+    //variable que se encarga de crear nuevos items
+    var controlA = 1
+    var controlD = 1
+    function newitemD(cronologia) {
+      //cronologia mas control ejemplo: salida"Despues"""1"
+      //if (controlD <= 10) {
+        var html = `<div class="row" id="${cronologia+controlD}">
+              <div class="col-12 col-md-6 col-lg-6">
+                          <div class="form-group">
+                            <label>Descripción de la Actividad</label>
+                            <button type="button" class="btn btn-light btn-round btn-lg btn-fab" onclick="$('#${cronologia+controlD}').remove()">
+                                                    Eliminar
+                                                </button>
+                            <br>
+
+                            <textarea id="salida${cronologia + controlD}" rows="4" cols="50" name='Descripcion' class="form-control mb-3"></textarea>
+                            <div class="col-sm-1 px-0">
+                            <button type="button" class="btn btn-light btn-round btn-lg btn-fab"
+                                                        id="btnVozATexto${cronologia + controlD}" onclick="ejecutarvoz(${"'" + cronologia + "'," + controlD})">
+                                                    <i class="material-icons">mic</i>
+                                                </button>
+                                            </div>
+                          </div>
+                        </div>
+
+                        <div class="col-12 col-lg-6">
+                          <div class="row">
+                            <div class="col-12">
+                              <div action="/" class="dropzone ml-1" id="my-awesome-dropzone-${cronologia + controlD}">
+                                <div class="dz-message">
+                                  <div class="drag-icon-cph">
+                                    <i class="material-icons">touch_app</i>
+                                  </div>
+                                  <h4>Arrastre las imágenes o haga clic aquí para subirlas</h4>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>`
+
+        $('#itemsD').append(html)
+
+        controlD++
+      //} else {
+      //  alert("Disculpe solo puede tener maximo 10 items en el area Despues, \n para mayor informacion consulte con su proveedor de servicios")
+      //}
+    }
+
+    function newitemA(cronologia) {
+      //cronologia mas control ejemplo: salida"Antes"""1"
+      //descomenta para maximo 10 iteraciones
+      //if (controlD <= 10) {
+        var html = `<div class="row" id="${cronologia+controlA}">
+              <div class="col-12 col-md-6 col-lg-6">
+                          <div class="form-group">
+                            <label>Descripción de la Actividad</label>
+                            <button type="button" class="btn btn-light btn-round btn-lg btn-fab" onclick="$('#${cronologia+controlA}').remove()">
+                                                    Eliminar
+                                                </button>
+                            <br>
+
+                            <textarea id="salida${cronologia + controlA}" rows="4" cols="50" name='Descripcion' class="form-control mb-3"></textarea>
+                            <div class="col-sm-1 px-0">
+                            <button type="button" class="btn btn-light btn-round btn-lg btn-fab"
+                                                        id="btnVozATexto${cronologia + controlA}" onclick="ejecutarvoz(${"'" + cronologia + "'," + controlA})">
+                                                    <i class="material-icons">mic</i>
+                                                </button>
+                                            </div>
+                          </div>
+                        </div>
+
+                        <div class="col-12 col-lg-6">
+                          <div class="row">
+                            <div class="col-12">
+                              <div action="/" class="dropzone ml-1" id="my-awesome-dropzone-${cronologia + controlA}">
+                                <div class="dz-message">
+                                  <div class="drag-icon-cph">
+                                    <i class="material-icons">touch_app</i>
+                                  </div>
+                                  <h4>Arrastre las imágenes o haga clic aquí para subirlas</h4>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>`
+
+        $('#itemsA').append(html)
+
+        controlA++
+ //} else {
+      //  alert("Disculpe solo puede tener maximo 10 items en el area Despues, \n para mayor informacion consulte con su proveedor de servicios")
+      //}     
+    }
   </script>
 
 
