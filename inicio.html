@@ -1397,6 +1397,23 @@
       }
     });
 
+$('#btnVozATexto').on('click', function (e) {
+      startArtyom();
+      artyom.redirectRecognizedTextOutput(function (text, isFinal) {
+        var texto = $('#salida_uno');
+        var salto = "\n";
+        if (isFinal) {
+          if (texto.val() == "") {
+            salto = "";
+          }
+          texto.val(texto.val() + salto + text);
+
+
+          autosize.update(texto);
+        }
+      });
+    });
+
     $('#btnVozATexto1').on('click', function (e) {
       startArtyom();
       artyom.redirectRecognizedTextOutput(function (text, isFinal) {
